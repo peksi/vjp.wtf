@@ -1,42 +1,42 @@
- /* TÄMÄ ON CSS:ää */
+/* TÄMÄ ON CSS:ää */
 
-    /*asetetaan koko sivun taustaväri mustaksi 
+/*asetetaan koko sivun taustaväri mustaksi 
     ja tekstin väri valkoiseksi. Kaikki sivun 
     leipäteksit (<p>) asetetaan default kokoon 20px */
 
-    body {
-        background-color: #000000;
-        color: #ffffff;
-        font-size: 20px;
-        padding: 20px;
-    }
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 20px;
+}
 
-    /*asetetaan headerin taustaväri valkoiseksi 
+/*asetetaan headerin taustaväri valkoiseksi 
     ja tekstin väri mustaksi*/
-    header {
-        background-color: #ffffff;
-        color: #000000;
-    }
+header {
+    background-color: #ffffff;
+    color: #000000;
+}
 
-    /*asetetaan kaikki h2-otsikot jotka ovat 
+/*asetetaan kaikki h2-otsikot jotka ovat 
     divin sisällä keltaisiksi*/
-    div h2 {
-        color: #ffff00;
-    }
+div h2 {
+    color: #ffff00;
+}
 
-    /*asetetaan 'pieni' luokan tekstit pienemmiksi*/
-    .pieni {
-        font-size: 10px;
-    }
+/*asetetaan 'pieni' luokan tekstit pienemmiksi*/
+.pieni {
+    font-size: 10px;
+}
 
-    /*asetetaan 'harmaa' luokan tekstit harmaiksi*/
-    .harmaa {
-        color: #808080;
-    }
+/*asetetaan 'harmaa' luokan tekstit harmaiksi*/
+.harmaa {
+    color: #808080;
+}
 
-    /*Huomaa HTML:stä että yhdellä elementillä voi olla useampi luokka. Esim. nyt ensimmäisen divin sisällä oleva toisessa <p>-elementissä teksti on sekä pientä että harmaata*/
+/*Huomaa HTML:stä että yhdellä elementillä voi olla useampi luokka. Esim. nyt ensimmäisen divin sisällä oleva toisessa <p>-elementissä teksti on sekä pientä että harmaata*/
 
-    /*asetetaan 'random' id:n teksti punaisiksi*/
-    #random {
-        color: #ff0000;
-    }
+/*asetetaan 'random' id:n teksti punaisiksi*/
+#random {
+    color: #ff0000;
+}
