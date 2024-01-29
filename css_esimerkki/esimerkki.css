@@ -38,5 +38,7 @@ div h2 {
 
 /*asetetaan 'random' id:n teksti punaisiksi*/
 #random {
-    color: #ff0000;
+    color: red;
+    padding: 10px;
+    border: 1px solid red;
 }
