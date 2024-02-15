@@ -12,6 +12,8 @@
   margin: 0 0.5rem;
   color: white;
   font-weight: bold;
+  justify-content: center;
+  align-items: center;
 }
 
 .filters div:hover {
@@ -35,7 +37,6 @@
   font-weight: bold;
   color: white;
   padding-top: 1rem;
-  transition: all 0.3s ease;
 }
 
 .tag {
