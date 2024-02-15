@@ -93,26 +93,34 @@
             </section>
 
             <section>
-                <h3>Css accordion (click elements)</h3>
-                <div class="menuitemAccordion" id="about">About</div>
+                <h3>Css haitarimenu (klikkaa elementtejä)</h3>
+                <div class="menuitemAccordion" id="about">Info</div>
                 <div class="contentboxAccordion" id="about-content">
-                    Content here
+                    Infoa tänne
                 </div>
 
-                <div class="menuitemAccordion" id="blog">Blog</div>
-                <div class="contentboxAccordion" id="blog-content">Blog</div>
+                <div class="menuitemAccordion" id="blog">Blogi</div>
+                <div class="contentboxAccordion" id="blog-content">Blogi</div>
 
                 <div class="menuitemAccordion non-clickable" id="blog">
-                    Something else (non-clickable)
+                    Jotain muuta (ei klikattava)
                 </div>
                 <div class="contentboxAccordion" id="blog-content">
                     Something else?
                 </div>
+            </section>
+
+            <section>
+                <h3>Hae ajastettu tervehdys</h3>
+                <p>Paina nappia ja saat tervehdyksen, joka poistuu 5 sekunnin kuluttua</p>
+                <button onclick="greeting()">Hae päivä</button>
+                <p id="date"></p>
             </section>
         </main>
         <script defer src="/js2/mobileMenu.js"></script>
         <script defer src="/js2/naama.js"></script>
         <script defer src="/js2/accordion.js"></script>
         <script defer src="/js2/darkMode.js"></script>
+        <script defer src="/js2/tervehdys.js"></script>
     </body>
 </html>
