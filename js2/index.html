@@ -1,54 +1,53 @@
 <!DOCTYPE html>
 <html lang="fi">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital@0;1&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="/js2/styles/main.css" />
-        <link rel="stylesheet" href="/js2/styles/mobilemenu.css" / />
-        <link rel="stylesheet" href="/js2/styles/modal.css">
-        <link rel="stylesheet" href="/js2/styles/naama.css" />
-        <link rel="stylesheet" href="/js2/styles/accordion.css" />
-        <link rel="stylesheet" href="/js2/styles/filter.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/js2/styles/main.css" />
+    <link rel="stylesheet" href="/js2/styles/mobilemenu.css" />
+    <link rel="stylesheet" href="/js2/styles/modal.css" />
+    <link rel="stylesheet" href="/js2/styles/naama.css" />
+    <link rel="stylesheet" href="/js2/styles/accordion.css" />
+    <link rel="stylesheet" href="/js2/styles/filter.css" />
+    <link rel="stylesheet" href="/js2/styles/fullScreen.css" />
 
-        <title>JS Ominaisuuksia omille verkkosivuille</title>
-    </head>
-    <body>
-        <header>
-            <a href="/index.html" class="logo">VJP.WTF</a>
-            <button onclick="darkMode()">Switch to dark mode</button>
-            <button class="burger" id="burger">
-                <div class="burger-line"></div>
-                <div class="burger-line"></div>
-            </button>
-            <div class="nav-container" id="nav-container">
-                <nav class="nav" id="nav">
-                    <ul class="nav-list">
-                        <li class="nav-item">Rikkinäinen linkki 1</li>
-                        <li class="nav-item">Rikkinäinen linkki 2</li>
-                        <li class="nav-item">Rikkinäinen linkki 3</li>
-                    </ul>
-                    <p>Hei murmelit</p>
-                </nav>
-            </div>
-        </header>
-        <div class="modal-container" id="modal-container">
-            <div class="modal" data-modal="1">
-                <h5>Juukelispuukelis</h5>
-                <p>
-                    Avasit minut. En pidä tästä. Voisitko jo äkkiä painaa tota
-                    ruksia
-                </p>
-                <button class="modal-close">
-                  <div class="button-line"></div>
-                  <div class="button-line"></div>
-                </button>
-            </div>
+    <title>JS Ominaisuuksia omille verkkosivuille</title>
+  </head>
+  <body>
+    <header>
+      <a href="/index.html" class="logo">VJP.WTF</a>
+      <button onclick="darkMode()">Switch to dark mode</button>
+      <button class="burger" id="burger">
+        <div class="burger-line"></div>
+        <div class="burger-line"></div>
+      </button>
+      <div class="nav-container" id="nav-container">
+        <nav class="nav" id="nav">
+          <ul class="nav-list">
+            <li class="nav-item">Rikkinäinen linkki 1</li>
+            <li class="nav-item">Rikkinäinen linkki 2</li>
+            <li class="nav-item">Rikkinäinen linkki 3</li>
+          </ul>
+          <p>Hei murmelit</p>
+        </nav>
+      </div>
+    </header>
+
+    <div class="modal-container" id="modal-container">
+      <div class="modal" data-modal="1">
+        <h5>Juukelispuukelis</h5>
+        <p>Avasit minut. En pidä tästä. Voisitko jo äkkiä painaa tota ruksia</p>
+        <button class="modal-close">
+          <div class="button-line"></div>
+          <div class="button-line"></div>
+        </button>
+      </div>
             <div class="modal" data-modal="2">
                 <h5>Hihhihii</h5>
                 <p>
@@ -69,104 +68,149 @@
                   <div class="button-line"></div>
                 </button>
             </div>
+    </div>
+    <main>
+      <section class="hero">
+        <h1>JS part 2</h1>
+        <h2>Esimerkkejä omille portfoliosivuille</h2>
+      </section>
+      <section>
+        <div class="section-header">
+          <h3 class="section-heading">Mobiilinavigaatio</h3>
+          <h3 class="points">4p</h3>
         </div>
-        <main>
-            <section class="hero">
-                <h1>JS part 2</h1>
-                <h2>Esimerkkejä omille portfoliosivuille</h2>
-            </section>
-            <section>
-                <div class="section-header">
-                    <h3 class="section-heading">Mobiilinavigaatio</h3>
-                    <h3 class="points">4p</h3>
-                </div>
-            </section>
-            <section>
-                <div class="section-header">
-                    <h3 class="section-heading">Aukeava modaali</h3>
-                    <h3 class="points">8p</h3>
-                </div>
-                <div class="modal-buttons">
-                    <button class="modal-button" data-modal="1">Avaa modaali 1</button>
+      </section>
+      <section>
+        <div class="section-header">
+          <h3 class="section-heading">Aukeava modaali</h3>
+          <h3 class="points">8p</h3>
+        </div>
+        <div class="modal-buttons">
+          <button class="modal-button" data-modal="1">Avaa modaali 1</button>
                     <button class="modal-button" data-modal="2">Avaa modaali 2</button>
                     <button class="modal-button" data-modal="3">Avaa modaali 3</button>
-                </div>
-            </section>
-            <section>
-                <div class="section-header">
-                    <h3 class="section-heading">Hiirtä seuraava elementti</h3>
-                    <h3 class="points">4p</h3>
-                </div>
-                <p>
-                    Tässä esimerkissä on sidottu hiiren positio sivulla silmän
-                    pupilli-elementtien
-                    <em>margin-top</em> ja <em>margin-left</em> -arvoihin.
-                </p>
-                <div class="naama-wrapper">
-                    <div class="naama">
-                        <div class="silma">
-                            <div class="pupilliV"></div>
-                        </div>
-                        <div class="silma">
-                            <div class="pupilliO"></div>
-                        </div>
-                        <div class="suu">Inspectaa mua!</div>
-                    </div>
-                </div>
-            </section>
+        </div>
+      </section>
+      <section>
+        <div class="section-header">
+          <h3 class="section-heading">Hiirtä seuraava elementti</h3>
+          <h3 class="points">4p</h3>
+        </div>
+        <p>
+          Tässä esimerkissä on sidottu hiiren positio sivulla silmän
+          pupilli-elementtien
+          <em>margin-top</em> ja <em>margin-left</em> -arvoihin.
+        </p>
+        <div class="naama-wrapper">
+          <div class="naama">
+            <div class="silma">
+              <div class="pupilliV"></div>
+            </div>
+            <div class="silma">
+              <div class="pupilliO"></div>
+            </div>
+            <div class="suu">Inspectaa mua!</div>
+          </div>
+        </div>
+      </section>
 
-            <section>
-                <h3>Elementtien filtteröinti</h3>
-                <p>
-                    Todennäköisesti sivuillasi on projekteja joita haluaisit
-                    kenties järjestellä sen mukaan, mitä tägejä niihin liittyy,
-                    tai mihin kategorioihin projekti kuuluu? Anna käyttäjälle
-                    selkeä vinkki siitä, mitä elementtiä tulee painaa
-                </p>
+      <section>
+        <h3>Elementtien filtteröinti</h3>
+        <p>
+          Todennäköisesti sivuillasi on projekteja joita haluaisit kenties
+          järjestellä sen mukaan, mitä tägejä niihin liittyy, tai mihin
+          kategorioihin projekti kuuluu? Anna käyttäjälle selkeä vinkki siitä,
+          mitä elementtiä tulee painaa. Miten viestität filtterien resetöinnin?
+        </p>
 
-                <div class="project-wrapper">
-                    <div class="project a">Koodi</div>
-                    <div class="project a">Koodi</div>
-                    <div class="project c">UI</div>
-                    <div class="project b">UX</div>
-                    <div class="project a">Koodi</div>
-                    <div class="project b">UX</div>
-                    <div class="project b">UX</div>
-                    <div class="project c">UI</div>
-                    <div class="project c">UI</div>
-                </div>
-            </section>
+        <h4>Pekan projektit</h4>
+        <div class="filters">
+          Filtterit:
+          <div id="filter-code" class="a">#koodi</div>
+          <div id="filter-ui" class="b">#ui</div>
+          <div id="filter-ux" class="c">#ux</div>
+          <div id="filter-reset">reset</div>
+        </div>
+        <div class="project-wrapper">
+          <div class="project a">
+            Nettisivut
+            <div class="tag">#koodi</div>
+          </div>
+          <div class="project a">
+            Nettikauppa
+            <div class="tag">#koodi</div>
+          </div>
+          <div class="project c">
+            Luettavuus
+            <div class="tag">#ui</div>
+          </div>
+          <div class="project b">UX</div>
+          <div class="project a">
+            Koodi
+            <div class="tag">#koodi</div>
+          </div>
+          <div class="project b">
+            Rautalankamalli
+            <div class="tag">#ui</div>
+          </div>
+          <div class="project b">UX</div>
+          <div class="project c">
+            Estetiikka
+            <div class="tag">#ui</div>
+          </div>
+          <div class="project c">
+            Visuaalisen ilmeen suunnittelu
+            <div class="tag">#ui</div>
+          </div>
+        </div>
+      </section>
 
-            <section>
-                <h3>Css haitarimenu (klikkaa elementtejä)</h3>
-                <div class="menuitemAccordion" id="about">Info</div>
-                <div class="contentboxAccordion" id="about-content">
-                    Infoa tänne
-                </div>
+      <section>
+        <h3>Css haitarimenu (klikkaa elementtejä)</h3>
+        <div class="menuitemAccordion" id="about">Info</div>
+        <div class="contentboxAccordion" id="about-content">Infoa tänne</div>
 
-                <div class="menuitemAccordion" id="blog">Blogi</div>
-                <div class="contentboxAccordion" id="blog-content">Blogi</div>
+        <div class="menuitemAccordion" id="blog">Blogi</div>
+        <div class="contentboxAccordion" id="blog-content">Blogi</div>
 
-                <div class="menuitemAccordion non-clickable" id="blog">
-                    Jotain muuta (ei klikattava)
-                </div>
-                <div class="contentboxAccordion" id="blog-content">
-                    Something else?
-                </div>
-            </section>
+        <div class="menuitemAccordion non-clickable" id="blog">
+          Jotain muuta (ei klikattava)
+        </div>
+        <div class="contentboxAccordion" id="blog-content">Something else?</div>
+      </section>
 
-            <section>
-                <h3>Hae ajastettu tervehdys</h3>
-                <p>Paina nappia ja saat tervehdyksen, joka poistuu 5 sekunnin kuluttua</p>
-                <button onclick="greeting()">Hae päivä</button>
-                <p id="date"></p>
-            </section>
-        </main>
-        <script defer src="/js2/scripts/mobileMenu.js"></script>
-        <script defer src="/js2/scripts/modal.js"></script>
-        <script defer src="/js2/scripts/naama.js"></script>
-        <script defer src="/js2/scripts/accordion.js"></script>
-        <script defer src="/js2/scripts/darkMode.js"></script>
-        <script defer src="/js2/scripts/tervehdys.js"></script>
-    </body>
+      <section>
+        <h3>Hae ajastettu tervehdys</h3>
+        <p>
+          Paina nappia ja saat tervehdyksen, joka poistuu 5 sekunnin kuluttua
+        </p>
+        <button onclick="greeting()">Hae päivä</button>
+        <p id="date"></p>
+      </section>
+
+      <section>
+        <h3>Katso kuvaa koko ruudulla klikkaamalla</h3>
+        <div id="img-viewer">
+          <span class="close" onclick="close_model()">&times;</span>
+          <img class="modal-content" id="full-image" />
+        </div>
+
+        <div class="img-container">
+          <img
+            src="../loremipsum/downloads/Jalmari-20.jpg"
+            class="img-source"
+            onclick="full_view(this)"
+          />
+        </div>
+      </section>
+    </main>
+    <script defer src="/js2/scripts/mobileMenu.js"></script>
+    <script defer src="/js2/scripts/modal.js"></script>
+    <script defer src="/js2/scripts/filter.js"></script>
+    <script defer src="/js2/scripts/naama.js"></script>
+    <script defer src="/js2/scripts/accordion.js"></script>
+    <script defer src="/js2/scripts/darkMode.js"></script>
+    <script defer src="/js2/scripts/tervehdys.js"></script>
+    <script defer src="/js2/scripts/fullScreen.js"></script>
+  </body>
 </html>
