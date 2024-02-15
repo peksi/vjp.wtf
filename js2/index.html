@@ -10,11 +10,12 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="/js2/styles/main.css" />
-        <link rel="stylesheet" href="/js2/styles/mobilemenu.css" / />
+        <link rel="stylesheet" href="/js2/styles/mobilemenu.css" />
         <link rel="stylesheet" href="/js2/styles/modal.css">
         <link rel="stylesheet" href="/js2/styles/naama.css" />
         <link rel="stylesheet" href="/js2/styles/accordion.css" />
         <link rel="stylesheet" href="/js2/styles/filter.css" />
+        <link rel="stylesheet" href="/js2/styles/fullScreen.css" />
 
         <title>JS Ominaisuuksia omille verkkosivuille</title>
     </head>
@@ -139,6 +140,18 @@
                 <button onclick="greeting()">Hae päivä</button>
                 <p id="date"></p>
             </section>
+
+            <section>
+                <h3>Katso kuvaa koko ruudulla klikkaamalla</h3>
+                <div id="img-viewer">
+                    <span class="close" onclick="close_model()">&times;</span>
+                    <img class="modal-content" id="full-image" >
+                </div>
+                
+                <div  class='img-container'>
+                    <img src="../loremipsum/downloads/Jalmari-20.jpg" class='img-source' onclick="full_view(this)">
+                </div>
+            </section>
         </main>
         <script defer src="/js2/scripts/mobileMenu.js"></script>
         <script defer src="/js2/scripts/modal.js"></script>
@@ -146,5 +159,6 @@
         <script defer src="/js2/scripts/accordion.js"></script>
         <script defer src="/js2/scripts/darkMode.js"></script>
         <script defer src="/js2/scripts/tervehdys.js"></script>
+        <script defer src="/js2/scripts/fullScreen.js"></script>
     </body>
 </html>
