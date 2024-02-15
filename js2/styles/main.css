@@ -1,0 +1,32 @@
+/*Sivuston perustyylittelyä*/
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #efefef;
+    font-family: sans-serif;
+    color: rgb(34, 34, 34);
+    position: relative;
+}
+
+main {
+    width: 100%;
+    padding: 64px 16px;
+    box-sizing: border-box;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: "Source Code Pro", monospace;
+}
+
+p{
+    max-width: 80ch;
+    line-height: 1.4;
+}
+
+a{
+    text-decoration: none;
+    color: #333;
+}

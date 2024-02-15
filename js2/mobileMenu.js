@@ -1,7 +1,7 @@
 // Valitaan elementit
 
 const burgerButton = document.querySelector("#burger");
-const nav = document.querySelector("#nav");
+const nav = document.querySelector("#nav-container");
 
 // Lisätään tapahtumakuuntelija
 
