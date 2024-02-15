@@ -1,216 +1,296 @@
 <!DOCTYPE html>
 <html lang="fi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital@0;1&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/js2/styles/main.css" />
-    <link rel="stylesheet" href="/js2/styles/mobilemenu.css" />
-    <link rel="stylesheet" href="/js2/styles/modal.css" />
-    <link rel="stylesheet" href="/js2/styles/naama.css" />
-    <link rel="stylesheet" href="/js2/styles/accordion.css" />
-    <link rel="stylesheet" href="/js2/styles/filter.css" />
-    <link rel="stylesheet" href="/js2/styles/fullScreen.css" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital@0;1&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/js2/styles/main.css" />
+        <link rel="stylesheet" href="/js2/styles/mobilemenu.css" />
+        <link rel="stylesheet" href="/js2/styles/modal.css" />
+        <link rel="stylesheet" href="/js2/styles/naama.css" />
+        <link rel="stylesheet" href="/js2/styles/accordion.css" />
+        <link rel="stylesheet" href="/js2/styles/filter.css" />
+        <link rel="stylesheet" href="/js2/styles/fullScreen.css" />
 
-    <title>JS Ominaisuuksia omille verkkosivuille</title>
-  </head>
-  <body>
-    <header>
-      <a href="/index.html" class="logo">VJP.WTF</a>
-      <button onclick="darkMode()">Switch to dark mode</button>
-      <button class="burger" id="burger">
-        <div class="burger-line"></div>
-        <div class="burger-line"></div>
-      </button>
-      <div class="nav-container" id="nav-container">
-        <nav class="nav" id="nav">
-          <ul class="nav-list">
-            <li class="nav-item">Rikkinäinen linkki 1</li>
-            <li class="nav-item">Rikkinäinen linkki 2</li>
-            <li class="nav-item">Rikkinäinen linkki 3</li>
-          </ul>
-          <p>Hei murmelit</p>
-        </nav>
-      </div>
-    </header>
+        <title>JS Ominaisuuksia omille verkkosivuille</title>
+    </head>
+    <body>
+        <header>
+            <a href="/index.html" class="logo">VJP.WTF</a>
+            <button onclick="darkMode()">Switch to dark mode</button>
+            <button class="burger" id="burger">
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+            </button>
+            <div class="nav-container" id="nav-container">
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">Rikkinäinen linkki 1</li>
+                        <li class="nav-item">Rikkinäinen linkki 2</li>
+                        <li class="nav-item">Rikkinäinen linkki 3</li>
+                    </ul>
+                    <p>Hei murmelit</p>
+                </nav>
+            </div>
+        </header>
 
-    <div class="modal-container" id="modal-container">
-      <div class="modal" data-modal="1">
-        <h5>Juukelispuukelis</h5>
-        <p>Avasit minut. En pidä tästä. Voisitko jo äkkiä painaa tota ruksia</p>
-        <button class="modal-close">
-          <div class="button-line"></div>
-          <div class="button-line"></div>
-        </button>
-      </div>
+        <div class="modal-container" id="modal-container">
+            <div class="modal" data-modal="1">
+                <h5>Juukelispuukelis</h5>
+                <p>
+                    Avasit minut. En pidä tästä. Voisitko jo äkkiä painaa tota
+                    ruksia
+                </p>
+                <button class="modal-close">
+                    <div class="button-line"></div>
+                    <div class="button-line"></div>
+                </button>
+            </div>
             <div class="modal" data-modal="2">
                 <h5>Hihhihii</h5>
                 <p>
-                    "Kutittaa, voitit pelin!", sanoi Sakari kun puit hänelle villapaidan. Uh mitä muistoja.
+                    "Kutittaa, voitit pelin!", sanoi Sakari kun puit hänelle
+                    villapaidan. Uh mitä muistoja.
                 </p>
                 <button class="modal-close">
-                  <div class="button-line"></div>
-                  <div class="button-line"></div>
+                    <div class="button-line"></div>
+                    <div class="button-line"></div>
                 </button>
             </div>
             <div class="modal" data-modal="3">
                 <h5>Seis</h5>
                 <p>
-                    Nyt loppu se nappuloiden turhanpäiväinen rämpyttely ja koodaamaan siitä! Ei ne sivut itsestään pötkähdä.
+                    Nyt loppu se nappuloiden turhanpäiväinen rämpyttely ja
+                    koodaamaan siitä! Ei ne sivut itsestään pötkähdä.
                 </p>
                 <button class="modal-close">
-                  <div class="button-line"></div>
-                  <div class="button-line"></div>
+                    <div class="button-line"></div>
+                    <div class="button-line"></div>
                 </button>
             </div>
-    </div>
-    <main>
-      <section class="hero">
-        <h1>JS part 2</h1>
-        <h2>Esimerkkejä omille portfoliosivuille</h2>
-      </section>
-      <section>
-        <div class="section-header">
-          <h3 class="section-heading">Mobiilinavigaatio</h3>
-          <h3 class="points">4p</h3>
         </div>
-      </section>
-      <section>
-        <div class="section-header">
-          <h3 class="section-heading">Aukeava modaali</h3>
-          <h3 class="points">8p</h3>
-        </div>
-        <div class="modal-buttons">
-          <button class="modal-button" data-modal="1">Avaa modaali 1</button>
-                    <button class="modal-button" data-modal="2">Avaa modaali 2</button>
-                    <button class="modal-button" data-modal="3">Avaa modaali 3</button>
-        </div>
-      </section>
-      <section>
-        <div class="section-header">
-          <h3 class="section-heading">Hiirtä seuraava elementti</h3>
-          <h3 class="points">4p</h3>
-        </div>
-        <p>
-          Tässä esimerkissä on sidottu hiiren positio sivulla silmän
-          pupilli-elementtien
-          <em>margin-top</em> ja <em>margin-left</em> -arvoihin.
-        </p>
-        <div class="naama-wrapper">
-          <div class="naama">
-            <div class="silma">
-              <div class="pupilliV"></div>
-            </div>
-            <div class="silma">
-              <div class="pupilliO"></div>
-            </div>
-            <div class="suu">Inspectaa mua!</div>
-          </div>
-        </div>
-      </section>
+        <main>
+            <section class="hero">
+                <div>
+                    <h1>JS part 2</h1>
+                    <p>
+                        Tälle sivulle on koottu lista erilaisia JavaScript
+                        esimerkkejä, joista voit valita mieluisesi
+                        implementoitavaksi omille portfoliosivuillesi A+
+                        tehtävänannon mukaiseksi. Esimerkkien koodin löydät
+                        kätevästi version.aallosta:
+                    </p>
+                    <a target="_blank" href="#" class="git">Repo</a>
+                </div>
+                <div class="flower-container">
+                    <svg
+                        width="100%"
+                        height="100%"
+                        viewBox="0 0 514 487"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="flower"
+                    >
+                        <path
+                            d="M219.661 296.968C275.991 347.688 342.121 263.638 319.401 207.488C308.571 192.738 275.161 179.258 275.161 179.258C197.541 157.388 159.391 251.098 219.661 296.968Z"
+                            stroke-width="8"
+                            stroke-miterlimit="10"
+                            stroke-linejoin="round"
+                            stroke-linecap="round"
+                            class="flower-center"
+                        />
+                        <path
+                            d="M4.04006 314.47C5.28006 332.49 16.3901 350.38 33.4401 356.34C78.7001 363.67 120.62 327.01 163.99 314.98C16.6401 424.42 208.51 549.24 236.02 383.51C235.97 415.09 238.58 453.36 267.19 472.55C295.2 489.78 357.49 484.77 374.37 453.78C382.02 421.4 364.65 344.99 340.27 321.93C457.4 403.72 537.75 274.17 419.47 250.18C480.96 248.72 544.22 194.32 488.06 145.11C453.37 121.64 409.75 140.27 376.58 158.14C408.68 139.77 426.37 100.98 423.76 64.09C424.37 31.65 392.71 8.83998 361.4 15.51C315.91 24.9 295.06 72.69 281.32 112.58C278.43 78.94 276.82 37.31 250.99 12.77C203.35 -18.28 116.41 48.66 168.38 126.45C105.3 32.02 -12.9499 111.01 37.7301 181.19C62.6601 210.6 110.29 207.21 140.66 230.96C84.9301 201.4 1.94006 249.54 4.04006 314.47Z"
+                            stroke-width="8"
+                            stroke-miterlimit="10"
+                            stroke-linejoin="round"
+                            stroke-linecap="round"
+                            class="flower-petals"
+                        />
+                    </svg>
+                </div>
+            </section>
+            <!--MOBIILINAVIGAATIO-->
+            <section>
+                <div class="section-header">
+                    <h3 class="section-heading">1. Mobiilinavigaatio</h3>
+                    <h3 class="points">4p</h3>
+                </div>
+                <div class="instructions-container">
+                    <p>
+                        Tämän sivuston navigaatio on klassinen esimerkki
+                        mobiilinavigaatiosta. Oikean yläkulman burger-ikonia
+                        klikatessa aukeaa sivuston menu.
+                    </p>
+                    <div class="files-container">
+                        <h5>Toteutuksen tiedostot</h5>
+                        <ul class="files">
+                            <li class="file">mobileMenu.js</li>
+                            <li class="file">mobilemenu.css</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
-      <section>
-        <h3>Elementtien filtteröinti</h3>
-        <p>
-          Todennäköisesti sivuillasi on projekteja joita haluaisit kenties
-          järjestellä sen mukaan, mitä tägejä niihin liittyy, tai mihin
-          kategorioihin projekti kuuluu? Anna käyttäjälle selkeä vinkki siitä,
-          mitä elementtiä tulee painaa. Miten viestität filtterien resetöinnin?
-        </p>
+            <section>
+                <div class="section-header">
+                    <h3 class="section-heading">2. Aukeava modaali</h3>
+                    <h3 class="points">8p</h3>
+                </div>
+                <div class="example-container modal-buttons">
+                    <button class="modal-button" data-modal="1">
+                        Avaa modaali 1
+                    </button>
+                    <button class="modal-button" data-modal="2">
+                        Avaa modaali 2
+                    </button>
+                    <button class="modal-button" data-modal="3">
+                        Avaa modaali 3
+                    </button>
+                </div>
+            </section>
+            <section>
+                <div class="section-header">
+                    <h3 class="section-heading">Hiirtä seuraava elementti</h3>
+                    <h3 class="points">4p</h3>
+                </div>
+                <p>
+                    Tässä esimerkissä on sidottu hiiren positio sivulla silmän
+                    pupilli-elementtien
+                    <em>margin-top</em> ja <em>margin-left</em> -arvoihin.
+                </p>
+                <div class="example-container">
+                    <div class="naama-wrapper">
+                        <div class="naama">
+                            <div class="silma">
+                                <div class="pupilliV"></div>
+                            </div>
+                            <div class="silma">
+                                <div class="pupilliO"></div>
+                            </div>
+                            <div class="suu">Inspectaa mua!</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        <h4>Pekan projektit</h4>
-        <div class="filters">
-          Filtterit:
-          <div id="filter-code" class="a">#koodi</div>
-          <div id="filter-ui" class="b">#ui</div>
-          <div id="filter-ux" class="c">#ux</div>
-          <div id="filter-reset">reset</div>
-        </div>
-        <div class="project-wrapper">
-          <div class="project a">
-            Nettisivut
-            <div class="tag">#koodi</div>
-          </div>
-          <div class="project a">
-            Nettikauppa
-            <div class="tag">#koodi</div>
-          </div>
-          <div class="project c">
-            Luettavuus
-            <div class="tag">#ui</div>
-          </div>
-          <div class="project b">UX</div>
-          <div class="project a">
-            Koodi
-            <div class="tag">#koodi</div>
-          </div>
-          <div class="project b">
-            Rautalankamalli
-            <div class="tag">#ui</div>
-          </div>
-          <div class="project b">UX</div>
-          <div class="project c">
-            Estetiikka
-            <div class="tag">#ui</div>
-          </div>
-          <div class="project c">
-            Visuaalisen ilmeen suunnittelu
-            <div class="tag">#ui</div>
-          </div>
-        </div>
-      </section>
+            <section>
+                <h3>Elementtien filtteröinti</h3>
+                <p>
+                    Todennäköisesti sivuillasi on projekteja joita haluaisit
+                    kenties järjestellä sen mukaan, mitä tägejä niihin liittyy,
+                    tai mihin kategorioihin projekti kuuluu? Anna käyttäjälle
+                    selkeä vinkki siitä, mitä elementtiä tulee painaa. Miten
+                    viestität filtterien resetöinnin?
+                </p>
 
-      <section>
-        <h3>Css haitarimenu (klikkaa elementtejä)</h3>
-        <div class="menuitemAccordion" id="about">Info</div>
-        <div class="contentboxAccordion" id="about-content">Infoa tänne</div>
+                <div class="example-container">
+                    <h4>Pekan projektit</h4>
+                    <div class="filters">
+                        Filtterit:
+                        <div id="filter-code" class="a">#koodi</div>
+                        <div id="filter-ui" class="b">#ui</div>
+                        <div id="filter-ux" class="c">#ux</div>
+                        <div id="filter-reset">reset</div>
+                    </div>
+                    <div class="project-wrapper">
+                        <div class="project a">
+                            Nettisivut
+                            <div class="tag">#koodi</div>
+                        </div>
+                        <div class="project a">
+                            Nettikauppa
+                            <div class="tag">#koodi</div>
+                        </div>
+                        <div class="project c">
+                            Luettavuus
+                            <div class="tag">#ui</div>
+                        </div>
+                        <div class="project b">UX</div>
+                        <div class="project a">
+                            Koodi
+                            <div class="tag">#koodi</div>
+                        </div>
+                        <div class="project b">
+                            Rautalankamalli
+                            <div class="tag">#ui</div>
+                        </div>
+                        <div class="project b">UX</div>
+                        <div class="project c">
+                            Estetiikka
+                            <div class="tag">#ui</div>
+                        </div>
+                        <div class="project c">
+                            Visuaalisen ilmeen suunnittelu
+                            <div class="tag">#ui</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        <div class="menuitemAccordion" id="blog">Blogi</div>
-        <div class="contentboxAccordion" id="blog-content">Blogi</div>
+            <section>
+                <h3>Css haitarimenu (klikkaa elementtejä)</h3>
+                <div class="example-container">
+                    <div class="menuitemAccordion" id="about">Info</div>
+                    <div class="contentboxAccordion" id="about-content">
+                        Infoa tänne
+                    </div>
+                    <div class="menuitemAccordion" id="blog">Blogi</div>
+                    <div class="contentboxAccordion" id="blog-content">
+                        Blogi
+                    </div>
+                    <div class="menuitemAccordion non-clickable" id="blog">
+                        Jotain muuta (ei klikattava)
+                    </div>
+                    <div class="contentboxAccordion" id="blog-content">
+                        Something else?
+                    </div>
+                </div>
+            </section>
 
-        <div class="menuitemAccordion non-clickable" id="blog">
-          Jotain muuta (ei klikattava)
-        </div>
-        <div class="contentboxAccordion" id="blog-content">Something else?</div>
-      </section>
+            <section>
+                <h3>Hae ajastettu tervehdys</h3>
+                <div class="example-container">
+                    <p>
+                        Paina nappia ja saat tervehdyksen, joka poistuu 5
+                        sekunnin kuluttua
+                    </p>
+                    <button onclick="greeting()">Hae päivä</button>
+                    <p id="date"></p>
+                </div>
+            </section>
 
-      <section>
-        <h3>Hae ajastettu tervehdys</h3>
-        <p>
-          Paina nappia ja saat tervehdyksen, joka poistuu 5 sekunnin kuluttua
-        </p>
-        <button onclick="greeting()">Hae päivä</button>
-        <p id="date"></p>
-      </section>
-
-      <section>
-        <h3>Katso kuvaa koko ruudulla klikkaamalla</h3>
-        <div id="img-viewer">
-          <span class="close" onclick="close_model()">&times;</span>
-          <img class="modal-content" id="full-image" />
-        </div>
-
-        <div class="img-container">
-          <img
-            src="../loremipsum/downloads/Jalmari-20.jpg"
-            class="img-source"
-            onclick="full_view(this)"
-          />
-        </div>
-      </section>
-    </main>
-    <script defer src="/js2/scripts/mobileMenu.js"></script>
-    <script defer src="/js2/scripts/modal.js"></script>
-    <script defer src="/js2/scripts/filter.js"></script>
-    <script defer src="/js2/scripts/naama.js"></script>
-    <script defer src="/js2/scripts/accordion.js"></script>
-    <script defer src="/js2/scripts/darkMode.js"></script>
-    <script defer src="/js2/scripts/tervehdys.js"></script>
-    <script defer src="/js2/scripts/fullScreen.js"></script>
-  </body>
+            <section>
+                <h3>Katso kuvaa koko ruudulla klikkaamalla</h3>
+                <div class="example-container">
+                    <div id="img-viewer">
+                        <span class="close" onclick="close_model()"
+                            >&times;</span
+                        >
+                        <img class="modal-content" id="full-image" />
+                    </div>
+                    <div class="img-container">
+                        <img
+                            src="../loremipsum/downloads/Jalmari-20.jpg"
+                            class="img-source"
+                            onclick="full_view(this)"
+                        />
+                    </div>
+                </div>
+            </section>
+        </main>
+        <script defer src="/js2/scripts/mobileMenu.js"></script>
+        <script defer src="/js2/scripts/modal.js"></script>
+        <script defer src="/js2/scripts/filter.js"></script>
+        <script defer src="/js2/scripts/naama.js"></script>
+        <script defer src="/js2/scripts/accordion.js"></script>
+        <script defer src="/js2/scripts/darkMode.js"></script>
+        <script defer src="/js2/scripts/tervehdys.js"></script>
+        <script defer src="/js2/scripts/fullScreen.js"></script>
+    </body>
 </html>

@@ -11,44 +11,78 @@ body {
 }
 
 .dark-mode {
-  background: rgb(34, 34, 34);
-  color: #efefef;
+    background: rgb(34, 34, 34);
+    color: #efefef;
 }
 
 main {
     width: 100%;
-    padding: 64px 16px;
+    padding: 0 64px;
     box-sizing: border-box;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-h1 {
-    font-family: "Source Code Pro", monospace;
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 64px;
 }
 
-h3{
+section {
+    margin-bottom: 60px;
+}
+
+h1 {
+    font-family: "Source Code Pro", monospace;
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
     font-size: 1.6rem;
 }
 
-p{
+p {
     max-width: 80ch;
     line-height: 1.4;
 }
 
-a{
+a {
     text-decoration: none;
-    color: #333;
+    color: rgb(34, 34, 34);
 }
 
-.section-header{
+.git {
+    display: block;
+    background-color: hotpink;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-top: 16px;
+    width: fit-content;
+    transition: all 0.3s;
+}
+
+.git:hover {
+    color: #fff;
+}
+
+.section-header {
     display: flex;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     gap: 20px;
 }
 
-.points{
+.points {
     display: block;
     width: 50px;
     height: 50px;
@@ -58,4 +92,140 @@ a{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.example-container {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 60px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-bottom: 60px;
+}
+
+.instructions-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    justify-content: space-between;
+}
+
+.instructions-container p {
+    margin: 0;
+}
+
+.files-container h5 {
+    margin-bottom: 16px;
+    font-size: 1rem;
+    margin-top: 0;
+}
+
+.files {
+    list-style: none;
+    padding: 0;
+    padding-left: 4px;
+    font-family: "Source Code Pro", monospace;
+}
+
+.flower-container {
+    position: relative;
+    width: 40%;
+    z-index: -1;
+}
+
+.flower {
+    animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.flower path {
+    stroke: hotpink;
+}
+
+.flower-petals {
+    stroke-dasharray: 2600;
+    animation: draw-petals 20s linear infinite;
+}
+
+@keyframes draw-petals {
+    0% {
+        stroke-dashoffset: 2600;
+    }
+    50% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: -2600;
+    }
+}
+
+.flower-center {
+    transform-origin: 50% 50%;
+    animation: draw-center 6s linear infinite;
+}
+
+@keyframes draw-center {
+    /* 0% {
+        stroke-dashoffset: 440;
+    }
+    50% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: -440;
+    } */
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+/*RESPONSIVITY*/
+
+@media (max-width: 900px) {
+    main {
+        padding: 0 32px;
+    }
+    section {
+        margin-bottom: 32px;
+    }
+    .hero {
+        padding: 0 32px;
+    }
+    .example-container {
+        padding: 32px;
+    }
+    .instructions-container {
+        flex-direction: column;
+    }
+    .files-container {
+        margin-top: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    main {
+        padding: 0 16px;
+    }
+    .hero {
+        padding: 0 16px;
+    }
+    .example-container {
+        padding: 16px;
+    }
+    .points {
+        width: 40px;
+        height: 40px;
+    }
 }

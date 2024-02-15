@@ -1,11 +1,7 @@
 .modal-buttons {
     display: flex;
     justify-content: space-evenly;
-    width: 100%;
-    background-color: #ffffff;
-    padding: 60px;
-    box-sizing: border-box;
-    border-radius: 5px;
+    gap: 16px;
 }
 
 .modal-button {
@@ -91,4 +87,15 @@
 
 .modal p {
     margin: 0;
+}
+
+/*RESPONSIVITY*/
+
+@media (max-width: 900px) {
+    .modal-buttons {
+        flex-direction: column;
+    }
+    .modal {
+        padding: 16px;
+    }
 }
