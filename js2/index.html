@@ -11,6 +11,7 @@
         />
         <link rel="stylesheet" href="/js2/styles/main.css" />
         <link rel="stylesheet" href="/js2/styles/mobilemenu.css" / />
+        <link rel="stylesheet" href="/js2/styles/modal.css">
         <link rel="stylesheet" href="/js2/styles/naama.css" />
         <link rel="stylesheet" href="/js2/styles/accordion.css" />
         <link rel="stylesheet" href="/js2/styles/filter.css" />
@@ -36,6 +37,19 @@
                 </nav>
             </div>
         </header>
+        <div class="modal-container" id="modal-container">
+            <div class="modal" data-modal="1">
+                <h5>Juukelispuukelis</h5>
+                <p>
+                    Avasit minut. En pidä tästä. Voisitko jo äkkiä painaa tota
+                    ruksia
+                </p>
+                <button class="modal-close">
+                  <div class="button-line"></div>
+                  <div class="button-line"></div>
+                </button>
+            </div>
+        </div>
         <main>
             <section class="hero">
                 <h1>JS part 2</h1>
@@ -45,6 +59,15 @@
                 <div class="section-header">
                     <h3 class="section-heading">Mobiilinavigaatio</h3>
                     <h3 class="points">4p</h3>
+                </div>
+            </section>
+            <section>
+                <div class="section-header">
+                    <h3 class="section-heading">Aukeava modaali</h3>
+                    <h3 class="points">8p</h3>
+                </div>
+                <div class="modal-buttons">
+                    <button class="modal-button" data-modal="1">Avaa modaali</button>
                 </div>
             </section>
             <section>
@@ -111,6 +134,7 @@
             </section>
         </main>
         <script defer src="/js2/mobileMenu.js"></script>
+        <script defer src="/js2/modal.js"></script>
         <script defer src="/js2/naama.js"></script>
         <script defer src="/js2/accordion.js"></script>
         <script defer src="/js2/darkMode.js"></script>
