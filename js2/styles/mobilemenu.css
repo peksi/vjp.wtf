@@ -77,7 +77,7 @@ header{
     box-sizing: border-box;
     align-items: center;
     flex-direction: column;
-    background-color: rgb(255, 85, 113);
+    background-color: hotpink;
     font-size: 24px;
     font-weight: 600;
     transform: translateX(100%);
