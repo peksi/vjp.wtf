@@ -10,8 +10,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/js2/styles/main.css" />
-    <link rel="stylesheet" href="/js2/styles/mobilemenu.css" />
+    <link rel="stylesheet" href="/js2/styles/mobilemenu.css" / />
     <link rel="stylesheet" href="/js2/styles/naama.css" />
+    <link rel="stylesheet" href="/js2/styles/accordion.css" />
     <link rel="stylesheet" href="/js2/styles/filter.css" />
 
     <title>JS Ominaisuuksia omille verkkosivuille</title>
@@ -19,6 +20,7 @@
   <body>
     <header>
       <a href="/index.html" class="logo">VJP.WTF</a>
+      <button onclick="darkMode()">Switch to dark mode</button>
       <button class="burger" id="burger">
         <div class="burger-line"></div>
         <div class="burger-line"></div>
@@ -39,7 +41,12 @@
         <h1>JS part 2</h1>
         <h2>Esimerkkejä omille portfoliosivuille</h2>
       </section>
-
+      <section>
+        <div class="section-header">
+          <h3 class="section-heading">Mobiilinavigaatio</h3>
+          <h3 class="points">4p</h3>
+        </div>
+      </section>
       <section>
         <h3>Hiirtä seuraava elementti — 4p</h3>
         <p>
@@ -81,8 +88,24 @@
           <div class="project c">UI</div>
         </div>
       </section>
+
+      <section>
+        <h3>Css accordion (click elements)</h3>
+        <div class="menuitemAccordion" id="about">About</div>
+        <div class="contentboxAccordion" id="about-content">Content here</div>
+
+        <div class="menuitemAccordion" id="blog">Blog</div>
+        <div class="contentboxAccordion" id="blog-content">Blog</div>
+
+        <div class="menuitemAccordion non-clickable" id="blog">
+          Something else (non-clickable)
+        </div>
+        <div class="contentboxAccordion" id="blog-content">Something else?</div>
+      </section>
     </main>
     <script defer src="/js2/mobileMenu.js"></script>
     <script defer src="/js2/naama.js"></script>
+    <script defer src="/js2/accordion.js"></script>
+    <script defer src="/js2/darkMode.js"></script>
   </body>
 </html>
