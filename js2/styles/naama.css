@@ -12,10 +12,11 @@
   width: 250px;
   margin: auto;
   transition: all 0.5s;
-  margin-top: 250px;
+  margin-top: 200px;
+  justify-content: center;
 }
 
-.naama-wrapper:hover .naama {
+.naama:hover {
   margin-top: 50px;
 }
 
@@ -41,4 +42,8 @@
   height: 100px;
   background: hotpink;
   border-radius: 0 0 100px 100px;
+  text-align: center;
+  line-height: 70px;
+  font-weight: bold;
+  color: white;
 }
