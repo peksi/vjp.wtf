@@ -61,18 +61,13 @@ a {
 }
 
 .git {
-    display: block;
-    background-color: hotpink;
-    padding: 8px 20px;
-    border-radius: 5px;
     font-weight: 600;
-    margin-top: 16px;
-    width: fit-content;
-    transition: all 0.3s;
+    transition: all 0.1s;
+    text-decoration: underline;
 }
 
 .git:hover {
-    color: #fff;
+    color: hotpink;
 }
 
 .section-header {
@@ -171,6 +166,21 @@ a {
 .flower-center {
     transform-origin: 50% 50%;
     animation: draw-center 6s linear infinite;
+}
+
+.white-container{
+    animation: rotate 10s linear infinite;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    opacity: 0.3;
+}
+
+.flower-white path {
+    stroke: #ffffff;
 }
 
 @keyframes draw-center {
