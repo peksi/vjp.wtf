@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      .wrapper {
+        font-family: "Futura";
+        font-size: 70px;
+        text-align: center;
+      }
+
+      .inspector {
+        text-shadow: 0 0 0.1em red;
+        animation: rotate 10s linear infinite;
+        /* slow down in the start & end & middle */
+        animation-timing-function: cubic-bezier(0.1, 0.1, 0.1, 1);
+        display: block;
+        padding: 2rem;
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(-20deg);
+        }
+        50% {
+          transform: rotate(20deg);
+        }
+        100% {
+          transform: rotate(-20deg);
+        }
+      }
+
+      .animation-code {
+        font-family: "Source Code Pro";
+        font-size: 1rem;
+        background-color: #eee;
+        padding: 1rem;
+        
+        margin-top: 3rem;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 80ch;
+        /* css consider whitespace */
+        white-space: pre;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      Lupaan ja vannon<br />
+      kautta kiven ja kannon.<br />
+      Että kun nettikehitystä teen <br />
+      <span class="inspector">inspectorin</span> auki pidän.
+
+    </div>
+    <div class="animation-code">
+        /* animaation koodi */
+
+        .inspector {
+            animation: rotate 10s linear infinite;
+            /* slow down in the start & end & middle */
+            animation-timing-function: cubic-bezier(0.1, 0.1, 0.1, 1);
+          }
+    
+          @keyframes rotate {
+            0% {
+              transform: rotate(-20deg);
+            }
+            50% {
+              transform: rotate(20deg);
+            }
+            100% {
+              transform: rotate(-20deg);
+            }
+          }        
+    </div>
+  </body>
+</html>
