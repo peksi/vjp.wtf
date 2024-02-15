@@ -11,6 +11,7 @@
     />
     <link rel="stylesheet" href="/js2/styles/main.css" />
     <link rel="stylesheet" href="/js2/styles/mobilemenu.css" / />
+    <link rel="stylesheet" href="/js2/styles/modal.css" />
     <link rel="stylesheet" href="/js2/styles/naama.css" />
     <link rel="stylesheet" href="/js2/styles/accordion.css" />
     <link rel="stylesheet" href="/js2/styles/filter.css" />
@@ -36,6 +37,17 @@
         </nav>
       </div>
     </header>
+
+    <div class="modal-container" id="modal-container">
+      <div class="modal" data-modal="1">
+        <h5>Juukelispuukelis</h5>
+        <p>Avasit minut. En pidä tästä. Voisitko jo äkkiä painaa tota ruksia</p>
+        <button class="modal-close">
+          <div class="button-line"></div>
+          <div class="button-line"></div>
+        </button>
+      </div>
+    </div>
     <main>
       <section class="hero">
         <h1>JS part 2</h1>
@@ -45,6 +57,15 @@
         <div class="section-header">
           <h3 class="section-heading">Mobiilinavigaatio</h3>
           <h3 class="points">4p</h3>
+        </div>
+      </section>
+      <section>
+        <div class="section-header">
+          <h3 class="section-heading">Aukeava modaali</h3>
+          <h3 class="points">8p</h3>
+        </div>
+        <div class="modal-buttons">
+          <button class="modal-button" data-modal="1">Avaa modaali</button>
         </div>
       </section>
       <section>
@@ -121,23 +142,33 @@
       </section>
 
       <section>
-        <h3>Css accordion (click elements)</h3>
-        <div class="menuitemAccordion" id="about">About</div>
-        <div class="contentboxAccordion" id="about-content">Content here</div>
+        <h3>Css haitarimenu (klikkaa elementtejä)</h3>
+        <div class="menuitemAccordion" id="about">Info</div>
+        <div class="contentboxAccordion" id="about-content">Infoa tänne</div>
 
-        <div class="menuitemAccordion" id="blog">Blog</div>
-        <div class="contentboxAccordion" id="blog-content">Blog</div>
+        <div class="menuitemAccordion" id="blog">Blogi</div>
+        <div class="contentboxAccordion" id="blog-content">Blogi</div>
 
         <div class="menuitemAccordion non-clickable" id="blog">
-          Something else (non-clickable)
+          Jotain muuta (ei klikattava)
         </div>
         <div class="contentboxAccordion" id="blog-content">Something else?</div>
       </section>
+
+      <section>
+        <h3>Hae ajastettu tervehdys</h3>
+        <p>
+          Paina nappia ja saat tervehdyksen, joka poistuu 5 sekunnin kuluttua
+        </p>
+        <button onclick="greeting()">Hae päivä</button>
+        <p id="date"></p>
+      </section>
     </main>
     <script defer src="/js2/mobileMenu.js"></script>
+    <script defer src="/js2/modal.js"></script>
     <script defer src="/js2/naama.js"></script>
-    <script defer src="/js2/filter.js"></script>
     <script defer src="/js2/accordion.js"></script>
     <script defer src="/js2/darkMode.js"></script>
+    <script defer src="/js2/tervehdys.js"></script>
   </body>
 </html>
