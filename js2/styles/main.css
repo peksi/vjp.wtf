@@ -7,6 +7,12 @@ body {
     font-family: sans-serif;
     color: rgb(34, 34, 34);
     position: relative;
+    transition: all 0.5s ease;
+}
+
+.dark-mode {
+  background: rgb(34, 34, 34);
+  color: #efefef;
 }
 
 main {
