@@ -216,6 +216,9 @@ a {
         flex-direction: column;
         justify-content: center;
     }
+    .section-header {
+        justify-content: space-between;
+    }
     .flower-container {
         width: 80%;
     }
