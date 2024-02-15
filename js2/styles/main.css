@@ -21,6 +21,10 @@ h1 {
     font-family: "Source Code Pro", monospace;
 }
 
+h3{
+    font-size: 1.6rem;
+}
+
 p{
     max-width: 80ch;
     line-height: 1.4;
@@ -29,4 +33,23 @@ p{
 a{
     text-decoration: none;
     color: #333;
+}
+
+.section-header{
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 20px;
+}
+
+.points{
+    display: block;
+    width: 50px;
+    height: 50px;
+    color: rgb(255, 85, 113);
+    border: 3px solid rgb(255, 85, 113);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
