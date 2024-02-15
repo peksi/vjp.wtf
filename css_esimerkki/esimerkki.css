@@ -42,3 +42,13 @@ div h2 {
     padding: 10px;
     border: 1px solid red;
 }
+
+.header{
+    width: 400px;
+}
+
+.div{
+    width: auto;
+    margin: 40px;
+    background-color: red;
+}
