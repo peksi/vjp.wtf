@@ -1,15 +1,22 @@
+.naama-wrapper {
+  border-bottom: 3px solid black;
+  width: 400px;
+  margin: auto;
+  height: 300px;
+  overflow: hidden;
+}
+
 .naama {
   display: flex;
   flex-wrap: wrap;
   width: 250px;
   margin: auto;
   transition: all 0.5s;
-
-  margin-top: 150px;
+  margin-top: 250px;
 }
 
-.naama:hover {
-  margin-top: 0;
+.naama-wrapper:hover .naama {
+  margin-top: 50px;
 }
 
 .silma {
