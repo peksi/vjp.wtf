@@ -1,0 +1,37 @@
+.naama {
+  display: flex;
+  flex-wrap: wrap;
+  width: 250px;
+  margin: auto;
+  transition: all 0.5s;
+
+  margin-top: 150px;
+}
+
+.naama:hover {
+  margin-top: 0;
+}
+
+.silma {
+  width: 100px;
+  height: 100px;
+  border: 3px solid black;
+  margin: 0.5rem;
+  border-radius: 100px;
+}
+
+.pupilliV,
+.pupilliO {
+  width: 10px;
+  height: 10px;
+  background: black;
+  border-radius: 10px;
+}
+
+.suu {
+  margin-left: 10px;
+  width: 200px;
+  height: 100px;
+  background: hotpink;
+  border-radius: 0 0 100px 100px;
+}
