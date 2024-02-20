@@ -1,31 +1,55 @@
-.menuitemAccordion {
-    height: 30px;
-    border: 3px solid black;
-    line-height: 30px;
-    padding-left: 5px;
-    background: teal;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;  
-    background-color: rgb(255, 85, 113);
+.accordion-item {
     width: 50%;
     margin: auto;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
+}
+
+.accordion-button {
+    width: 100%;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    border: none;
+    background: #333;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: left;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.accordion-button:hover {
+    background: hotpink;
+}
+
+.accordion-content {
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s;
+}
+
+.accordion-content.active {
+    height: 80px;
 }
 
 .non-clickable {
-   cursor: not-allowed;
+    cursor: not-allowed;
 }
 
-.contentboxAccordion {
-  overflow: hidden;
-  height: 0;
-  transition-duration: 0.5s;
-  width: 50%;
-  margin: auto;
+.non-clickable:hover {
+    background: #333;
 }
 
-.contentboxAccordion-active {
-  height: 100px;
-  width: 50%;
+
+
+/*RESPONSIVITY*/
+
+@media (max-width: 900px) {
+    .accordion-item {
+        width: 100%;
+    }
+    .accordion-content.active {
+        height: 100px;
+    }
 }

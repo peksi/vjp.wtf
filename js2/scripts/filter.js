@@ -1,41 +1,49 @@
-// selecting all the elements
+// Valitaan filtteröinnin napit
 const buttonA = document.querySelector("#filter-code");
 const buttonB = document.querySelector("#filter-ui");
 const buttonC = document.querySelector("#filter-ux");
 const reset = document.querySelector("#filter-reset");
 
-const boxes = Array.from(document.querySelectorAll(".project"));
 
-// in order to map over multiple elements we need to convert HTMLNodelist to Array with Array.from function
+// Valitaan eri kategorioihin kuuluvat projektilaatikot. 
+//Koska querySelectorAll palauttaa HTMLNodelistin, muutetaan se Arrayksi Array.from-funktiolla, jotta voidaan käyttää map-metodia.
 const aBoxes = Array.from(document.querySelectorAll(".project-wrapper .a"));
 const bBoxes = Array.from(document.querySelectorAll(".project-wrapper .b"));
 const cBoxes = Array.from(document.querySelectorAll(".project-wrapper .c"));
+
+// Yhdistetään kaikki projektilaatikko arrayt yhteen arrayhin
 const allBoxes = [...aBoxes, ...bBoxes, ...cBoxes];
 
-// event listener to be triggered after clicking button
+// Lisää ylläolevasta syntaksista: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+
+
+
+// Lisätään tapahtumakuuntelija jokaiselle napille:
+
+// Nappi A:lle
 buttonA.addEventListener("click", () => {
-  allBoxes.map((box) => {
-    box.style.display = "block";
+  // Mäpätään a laatikot näkyviin muokkaamalla suoraan tyylejä 
+  // saman voisi tehdä myös lisäämällä ja poistamalla luokkia
+  aBoxes.map((box) => {
+    box.style.display = "flex";
     box.style.opacity = "1";
   });
 
-  // make width of b and c boxes 0 and hide them after 500ms
-
+  // Yhteitetään piilotettavat laatikot yhteen arrayhin, ...
   const hideBoxes = [...bBoxes, ...cBoxes];
 
+  // ... ja piilotetaan ne
   hideBoxes.map((box) => {
     box.style.display = "none";
   });
 });
 
-// event listener to hide all boxes and then show B boxes
+// Nappi B:lle
 buttonB.addEventListener("click", () => {
-  allBoxes.map((box) => {
-    box.style.display = "block";
+  bBoxes.map((box) => {
+    box.style.display = "flex";
     box.style.opacity = "1";
   });
-
-  // make width of a and c boxes 0 and hide them after 500ms
 
   const hideBoxes = [...aBoxes, ...cBoxes];
 
@@ -44,14 +52,12 @@ buttonB.addEventListener("click", () => {
   });
 });
 
-// event listener to hide all boxes and then show C boxes
-buttonC.addEventListener("click", () => {
-  allBoxes.map((box) => {
-    box.style.display = "block";
-    box.style.opacity = "1";
-  });
 
-  // make width of a and b boxes 0 and hide them after 500ms
+// Nappi C:lle
+buttonC.addEventListener("click", () => {
+  cBoxes.map((box) => {
+    box.style.display = "flex";
+  });
 
   const hideBoxes = [...aBoxes, ...bBoxes];
 
@@ -60,11 +66,11 @@ buttonC.addEventListener("click", () => {
   });
 });
 
-// reset
 
+// Lisätään reset-napille tapahtumakuuntelija
 reset.addEventListener("click", () => {
-  boxes.map((box) => {
-    // show everything
-    box.style.display = "block";
+  allBoxes.map((box) => {
+    // Asetetaan kaikki laatikot näkyviin ja palautetaan niiden opacity alkuperäiseksi
+    box.style.display = "flex";
   });
 });

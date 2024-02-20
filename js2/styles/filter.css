@@ -1,56 +1,64 @@
 .filters {
-  margin: auto;
-  display: flex;
-  width: 90vw;
-  max-width: 1000px;
+    margin: auto;
+    display: flex;
+    gap: 12px;
+    align-items: center;
 }
 
-.filters div {
-  padding: 1rem;
-  cursor: pointer;
-
-  margin: 0 0.5rem;
-  color: white;
-  font-weight: bold;
-  justify-content: center;
-  align-items: center;
+.filter-button {
+    padding: 8px 12px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
 }
 
 .filters div:hover {
-  opacity: 0.8;
+    opacity: 0.8;
+}
+
+#filter-reset {
+    padding: 8px 12px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .project-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  width: 90vw;
-  max-width: 1000px;
-  margin: auto;
-  justify-content: space-between;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 20px;
+    justify-content: flex-start;
 }
 
 .project {
-  width: 300px;
-  height: 100px;
-  margin: 1rem;
-  text-align: center;
-  font-weight: bold;
-  color: white;
-  padding-top: 1rem;
+    width: 30%;
+    min-width: 200px;
+    flex-grow: 1;
+    height: 100px;
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
 }
 
-.tag {
-  margin-top: 2rem;
+.project p {
+    margin: 0;
 }
 
 .a {
-  background: teal;
+    background: rgb(0, 165, 165);
 }
 
 .b {
-  background: magenta;
+    background: rgb(206, 23, 206);
 }
 
 .c {
-  background: orange;
+    background: rgb(223, 155, 27);
 }

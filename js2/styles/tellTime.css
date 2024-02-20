@@ -1,0 +1,70 @@
+.tell-time-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+#tell-time-button{
+    background: #333;
+    color: #fff;
+    font-size: 1rem;
+    padding: 16px 32px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 5px;
+}
+
+#tell-time-button:hover{
+    background: hotpink;
+}
+
+#time-container{
+    width: 50%;
+    min-height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#timer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: black;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#bar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-radius: 5px;
+    background: hotpink;
+}
+
+#bar.active{
+    animation: progress 10s linear;
+}
+
+@keyframes progress{
+    0%{
+        width: 100%;
+    }
+    100%{
+        width: 0;
+    }
+}
+
+

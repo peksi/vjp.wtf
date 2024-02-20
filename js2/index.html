@@ -16,10 +16,12 @@
         <link rel="stylesheet" href="/js2/styles/accordion.css" />
         <link rel="stylesheet" href="/js2/styles/filter.css" />
         <link rel="stylesheet" href="/js2/styles/fullScreen.css" />
+        <link rel="stylesheet" href="/js2/styles/tellTime.css">
 
         <title>JS Ominaisuuksia omille verkkosivuille</title>
     </head>
     <body>
+        <!--MOBIILINAVIGAATIO 1/2-->
         <header>
             <a href="/index.html" class="logo">VJP.WTF</a>
             <button onclick="darkMode()">Switch to dark mode</button>
@@ -39,6 +41,7 @@
             </div>
         </header>
 
+        <!--AUKEAVA MODAALI 2/2-->
         <div class="modal-container" id="modal-container">
             <div class="modal" data-modal="1">
                 <h5>Juukelispuukelis</h5>
@@ -74,6 +77,7 @@
                 </button>
             </div>
         </div>
+
         <main>
             <section class="hero">
                 <div>
@@ -83,7 +87,9 @@
                         esimerkkejä, joista voit valita mieluisesi
                         implementoitavaksi omille portfoliosivuillesi A+
                         tehtävänannon mukaiseksi. Esimerkkien koodin löydät
-                        kätevästi <a href="#" class="git">version.aalto:sta</a>, josta voit forkata version itsellesi vapaaseen testailuun ja muokkailuun.
+                        kätevästi <a href="#" class="git">version.aalto:sta</a>,
+                        josta voit forkata version itsellesi vapaaseen
+                        testailuun ja muokkailuun.
                     </p>
                 </div>
                 <div class="flower-container">
@@ -132,8 +138,8 @@
                     </div>
                 </div>
             </section>
-            
-            <!--MOBIILINAVIGAATIO-->
+
+            <!--MOBIILINAVIGAATIO 2/2-->
             <section>
                 <div class="section-header">
                     <h3 class="section-heading">1. Mobiilinavigaatio</h3>
@@ -148,6 +154,7 @@
                     <div class="files-container">
                         <h5>Toteutuksen tiedostot</h5>
                         <ul class="files">
+                            <li class="file">index.html</li>
                             <li class="file">mobileMenu.js</li>
                             <li class="file">mobilemenu.css</li>
                         </ul>
@@ -155,10 +162,27 @@
                 </div>
             </section>
 
+            <!--AUKEAVA MODAALI 2/2-->
             <section>
                 <div class="section-header">
                     <h3 class="section-heading">2. Aukeava modaali</h3>
                     <h3 class="points">8p</h3>
+                </div>
+                <div class="instructions-container">
+                    <p>
+                        Modaali on sivuston päälle avautuva ikkuna, johon usein
+                        laitetaan tietoa, joka ei syystä tai toisesta mahdu
+                        sivuston muuhun rakenteeseen. Alla olevista napeista
+                        voit avata erilaisia modaalielementtejä.
+                    </p>
+                    <div class="files-container">
+                        <h5>Toteutuksen tiedostot</h5>
+                        <ul class="files">
+                            <li class="file">index.html</li>
+                            <li class="file">modal.js</li>
+                            <li class="file">modal.css</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="example-container modal-buttons">
                     <button class="modal-button" data-modal="1">
@@ -172,119 +196,143 @@
                     </button>
                 </div>
             </section>
+
+            <!--HAITARIELEMENTIT-->
             <section>
                 <div class="section-header">
-                    <h3 class="section-heading">Hiirtä seuraava elementti</h3>
-                    <h3 class="points">4p</h3>
+                    <h3 class="section-heading">Haitarielementti</h3>
+                    <h3 class="points">5p</h3>
                 </div>
-                <p>
-                    Tässä esimerkissä on sidottu hiiren positio sivulla silmän
-                    pupilli-elementtien
-                    <em>margin-top</em> ja <em>margin-left</em> -arvoihin.
-                </p>
+                <div class="instructions-container">
+                    <p>
+                        Haitarielementti on sivuston osa, joka avautuu ja
+                        sulkeutuu klikatessa. Tämä on hyödyllinen esimerkiksi
+                        silloin, kun sivustolla on paljon tekstiä, jota ei
+                        haluta näyttää heti alkuun. Tässä esimerkissä on kolme
+                        haitarielementtiä, joista viimeistä ei voi avata.
+                    </p>
+                    <div class="files-container">
+                        <h5>Toteutuksen tiedostot</h5>
+                        <ul class="files">
+                            <li class="file">index.html</li>
+                            <li class="file">accordion.js</li>
+                            <li class="file">accordion.css</li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="example-container">
-                    <div class="naama-wrapper">
-                        <div class="naama">
-                            <div class="silma">
-                                <div class="pupilliV"></div>
-                            </div>
-                            <div class="silma">
-                                <div class="pupilliO"></div>
-                            </div>
-                            <div class="suu">Inspectaa mua!</div>
+                    <div class="accordion-item">
+                        <button class="accordion-button" id="about-button">
+                            About
+                        </button>
+                        <div class="accordion-content" id="about-content">
+                            <p>
+                                Tämä on haitarielementti. Painamalla nappia
+                                avautuu lisätietoa. Painamalla uudestaan
+                                sulkeutuu.
+                            </p>
                         </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-button" id="blog-button">
+                            Blog
+                        </button>
+                        <div class="accordion-content" id="blog-content">
+                            <p>
+                                Tämä on haitarielementti. Painamalla nappia
+                                avautuu lisätietoa. Painamalla uudestaan
+                                sulkeutuu.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button
+                            class="accordion-button non-clickable"
+                            id="blog-button"
+                        >
+                            Tätä ei voikkaan avata
+                        </button>
                     </div>
                 </div>
             </section>
 
             <section>
-                <h3>Elementtien filtteröinti</h3>
-                <p>
-                    Todennäköisesti sivuillasi on projekteja joita haluaisit
-                    kenties järjestellä sen mukaan, mitä tägejä niihin liittyy,
-                    tai mihin kategorioihin projekti kuuluu? Anna käyttäjälle
-                    selkeä vinkki siitä, mitä elementtiä tulee painaa. Miten
-                    viestität filtterien resetöinnin?
-                </p>
+                <div class="section-header">
+                    <h3 class="section-heading">Elementtien filtteröinti</h3>
+                    <h3 class="points">6p</h3>
+                </div>
+                <div class="instructions-container">
+                    <p>
+                        Todennäköisesti sivuillasi on projekteja joita haluaisit
+                        kenties järjestellä sen mukaan, mitä tägejä niihin
+                        liittyy, tai mihin kategorioihin projekti kuuluu? Anna
+                        käyttäjälle selkeä vinkki siitä, mitä elementtiä tulee
+                        painaa. Miten viestität filtterien resetöinnin?
+                    </p>
+                    <div class="files-container">
+                        <h5>Toteutuksen tiedostot</h5>
+                        <ul class="files">
+                            <li class="file">index.html</li>
+                            <li class="file">filter.js</li>
+                            <li class="file">filter.css</li>
+                        </ul>
+                    </div>
+                </div>
 
                 <div class="example-container">
                     <h4>Pekan projektit</h4>
                     <div class="filters">
-                        Filtterit:
-                        <div id="filter-code" class="a">#koodi</div>
-                        <div id="filter-ui" class="b">#ui</div>
-                        <div id="filter-ux" class="c">#ux</div>
+                        <p>Filtterit:</p>
+                        <div id="filter-code" class="filter-button a">
+                            #koodi
+                        </div>
+                        <div id="filter-ui" class="filter-button b">#ui</div>
+                        <div id="filter-ux" class="filter-button c">#ux</div>
                         <div id="filter-reset">reset</div>
                     </div>
                     <div class="project-wrapper">
                         <div class="project a">
-                            Nettisivut
-                            <div class="tag">#koodi</div>
+                            <p>Nettisivut</p>
+                            <p class="tag">#koodi</p>
                         </div>
                         <div class="project a">
-                            Nettikauppa
-                            <div class="tag">#koodi</div>
+                            <p>Nettikauppa</p>
+                            <p class="tag">#koodi</p>
                         </div>
                         <div class="project c">
-                            Luettavuus
-                            <div class="tag">#ui</div>
-                        </div>
-                        <div class="project b">UX</div>
-                        <div class="project a">
-                            Koodi
-                            <div class="tag">#koodi</div>
+                            <p>Luettavuus</p>
+                            <p class="tag">#ui</p>
                         </div>
                         <div class="project b">
-                            Rautalankamalli
-                            <div class="tag">#ui</div>
+                            <p>UX</p>
+                            <p class="tag">#ux</p>
                         </div>
-                        <div class="project b">UX</div>
+                        <div class="project a">
+                            <p>Koodi</p>
+                            <p class="tag">#koodi</p>
+                        </div>
+                        <div class="project b">
+                            <p>Rautalankamalli</p>
+                            <p class="tag">#ui</p>
+                        </div>
                         <div class="project c">
-                            Estetiikka
-                            <div class="tag">#ui</div>
+                            <p>Estetiikka</p>
+                            <p class="tag">#ui</p>
                         </div>
                         <div class="project c">
-                            Visuaalisen ilmeen suunnittelu
-                            <div class="tag">#ui</div>
+                            <p>Visuaalisen ilmeen suunnittelu</p>
+                            <p class="tag">#ui</p>
                         </div>
                     </div>
                 </div>
             </section>
 
+            <!--KUVA KOKO RUUDULLE-->
             <section>
-                <h3>Css haitarimenu (klikkaa elementtejä)</h3>
-                <div class="example-container">
-                    <div class="menuitemAccordion" id="about">Info</div>
-                    <div class="contentboxAccordion" id="about-content">
-                        Infoa tänne
-                    </div>
-                    <div class="menuitemAccordion" id="blog">Blogi</div>
-                    <div class="contentboxAccordion" id="blog-content">
-                        Blogi
-                    </div>
-                    <div class="menuitemAccordion non-clickable" id="blog">
-                        Jotain muuta (ei klikattava)
-                    </div>
-                    <div class="contentboxAccordion" id="blog-content">
-                        Something else?
-                    </div>
+                <div class="section-header">
+                    <h3 class="section-heading">Avaa kuva koko ruudulle</h3>
+                    <h3 class="points">10p</h3>
                 </div>
-            </section>
-
-            <section>
-                <h3>Hae ajastettu tervehdys</h3>
-                <div class="example-container">
-                    <p>
-                        Paina nappia ja saat tervehdyksen, joka poistuu 5
-                        sekunnin kuluttua
-                    </p>
-                    <button onclick="greeting()">Hae päivä</button>
-                    <p id="date"></p>
-                </div>
-            </section>
-
-            <section>
-                <h3>Katso kuvaa koko ruudulla klikkaamalla</h3>
                 <div class="example-container">
                     <div id="img-viewer">
                         <span class="close" onclick="close_model()"
@@ -301,6 +349,82 @@
                     </div>
                 </div>
             </section>
+
+            <!--TERVEHDI KÄYTTÄJÄÄ JA KERRO AIKA-->
+            <section>
+                <div class="section-header">
+                    <h3 class="section-heading">
+                        Tervehdi käyttäjää ja kerro aika
+                    </h3>
+                    <h3 class="points">4p</h3>
+                </div>
+
+                <div class="instructions-container">
+                    <p>
+                        Sivuilla käyttäjälle voi kertoa ajankohtaisia asioita, kuten päivämäärän tai kellonajan. Tässä esimerkissä käyttäjälle kerrotaan päivämäärä ja tervehditään häntä. Tervehdys on näkyvissä vain 10 sekuntia.
+                    </p>
+                    <div class="files-container">
+                        <h5>Toteutuksen tiedostot</h5>
+                        <ul class="files">
+                            <li class="file">index.html</li>
+                            <li class="file">tellTime.js</li>
+                            <li class="file">tellTime.css</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="example-container">
+                    <div class="tell-time-container">
+                        <div class="instructions">
+                            <p>
+                                Paina nappia ja saat tervehdyksen, joka poistuu 10
+                                sekunnin kuluttua
+                            </p>
+                            <button id="tell-time-button">Tervehdi</button>
+                        </div>
+                        <div id="time-container">
+                            <div id="timer">
+                                <div id="bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--HIIRTÄ SEURAAVA ELEMENTTI-->
+            <section>
+                <div class="section-header">
+                    <h3 class="section-heading">Hiirtä seuraava elementti</h3>
+                    <h3 class="points">4p</h3>
+                </div>
+                <div class="instructions-container">
+                    <p>
+                        Tässä esimerkissä on sidottu hiiren positio sivulla
+                        silmän pupilli-elementtien
+                        <em>margin-top</em> ja <em>margin-left</em> -arvoihin
+                    </p>
+                    <div class="files-container">
+                        <h5>Toteutuksen tiedostot</h5>
+                        <ul class="files">
+                            <li class="file">naama.js</li>
+                            <li class="file">naama.css</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="example-container">
+                    <div class="naama-wrapper">
+                        <div class="naama">
+                            <div class="silma">
+                                <div class="pupilliV"></div>
+                            </div>
+                            <div class="silma">
+                                <div class="pupilliO"></div>
+                            </div>
+                            <div class="suu">Inspectaa mua!</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
         <script defer src="/js2/scripts/mobileMenu.js"></script>
         <script defer src="/js2/scripts/modal.js"></script>
@@ -308,7 +432,7 @@
         <script defer src="/js2/scripts/naama.js"></script>
         <script defer src="/js2/scripts/accordion.js"></script>
         <script defer src="/js2/scripts/darkMode.js"></script>
-        <script defer src="/js2/scripts/tervehdys.js"></script>
+        <script defer src="/js2/scripts/tellTime.js"></script>
         <script defer src="/js2/scripts/fullScreen.js"></script>
     </body>
 </html>
