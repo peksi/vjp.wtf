@@ -6,7 +6,7 @@ const reset = document.querySelector("#filter-reset");
 
 
 // Valitaan eri kategorioihin kuuluvat projektilaatikot. 
-//Koska querySelectorAll palauttaa HTMLNodelistin, muutetaan se Arrayksi Array.from-funktiolla, jotta voidaan käyttää map-metodia.
+// Koska querySelectorAll palauttaa HTMLNodelistin, muutetaan se Arrayksi Array.from-funktiolla, jotta voidaan käyttää map-metodia.
 const aBoxes = Array.from(document.querySelectorAll(".project-wrapper .a"));
 const bBoxes = Array.from(document.querySelectorAll(".project-wrapper .b"));
 const cBoxes = Array.from(document.querySelectorAll(".project-wrapper .c"));

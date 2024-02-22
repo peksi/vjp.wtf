@@ -1,4 +1,4 @@
-//Valitaan haitariosionden elementit
+//Valitaan haitariosioden elementit
 const aboutButton = document.querySelector('#about-button')
 const aboutContent = document.querySelector('#about-content')
 const blogButton = document.querySelector('#blog-button')
@@ -9,7 +9,7 @@ aboutButton.addEventListener('click', () => {
   //Lisätään tai poistetaan active-luokka 
   aboutContent.classList.toggle('active')
 
-  //Vapaaehtoinen: suljetaan toinen osio, jos se on auki
+  //Suljetaan muut osiot poistamalla niistä active-luokka
   blogContent.classList.remove('active')
 })
 
