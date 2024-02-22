@@ -67,10 +67,10 @@ window.addEventListener("scroll", () => {
     });
 });
 
-// TESTAUSTA
+// TESTAUSTA - voit käyttää omaan testaamiseen 
 const testElement = document.querySelector("#modal");
 
 testElement.addEventListener("click", () => {
-    const isElementInViewportResult = isElementInViewport(testElement);
-    console.log(isElementInViewportResult);
+    const isElementInViewportResult = isElementInViewportCenter(testElement);
+    console.log('Aktiivinen: ', isElementInViewportResult);
 });

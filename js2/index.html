@@ -16,8 +16,8 @@
         <link rel="stylesheet" href="/js2/styles/accordion.css" />
         <link rel="stylesheet" href="/js2/styles/filter.css" />
         <link rel="stylesheet" href="/js2/styles/fullScreen.css" />
-        <link rel="stylesheet" href="/js2/styles/scrollDots.css">
-        <link rel="stylesheet" href="/js2/styles/darkMode.css">
+        <link rel="stylesheet" href="/js2/styles/scrollDots.css" />
+        <link rel="stylesheet" href="/js2/styles/darkMode.css" />
         <link rel="stylesheet" href="/js2/styles/tellTime.css" />
 
         <title>JS Ominaisuuksia omille verkkosivuille</title>
@@ -87,10 +87,21 @@
                         Tälle sivulle on koottu lista erilaisia JavaScript
                         esimerkkejä, joista voit valita mieluisesi
                         implementoitavaksi omille portfoliosivuillesi A+
-                        tehtävänannon mukaiseksi. Esimerkkien koodin löydät
-                        kätevästi <a href="#" class="git">version.aalto:sta</a>,
-                        josta voit forkata version itsellesi vapaaseen
-                        testailuun ja muokkailuun.
+                        tehtävänannon mukaiseksi.
+                    </p>
+                    <p>
+                        Esimerkkien koodin löydät kätevästi Pekan
+                        <a
+                            target="_blank"
+                            href="https://github.com/peksi/vjp.wtf"
+                            class="git"
+                            >GitHubista</a
+                        >, josta voit vihreästä nappulasta ladata repositorion
+                        ZIP-tiedostona.
+                    </p>
+                    <p>
+                        Pura ZIP-tiedosto ja avaa kansio koodieditorissa.
+                        Kierroksen materiaalti löytyy kansiosta <em>js2</em>.
                     </p>
                 </div>
                 <div class="flower-container">
@@ -144,14 +155,31 @@
             <section id="mobile-nav">
                 <div class="section-header">
                     <h3 class="section-heading">1. Mobiilinavigaatio</h3>
-                    <h3 class="points">4p</h3>
+                    <h3 class="points">6p</h3>
                 </div>
                 <div class="instructions-container">
-                    <p>
-                        Tämän sivuston navigaatio on klassinen esimerkki
-                        mobiilinavigaatiosta. Oikean yläkulman burger-ikonia
-                        klikatessa aukeaa sivuston menu.
-                    </p>
+                    <div>
+                        <p>
+                            Tämän sivuston navigaatio on klassinen esimerkki
+                            mobiilinavigaatiosta. Oikean yläkulman burger-ikonia
+                            klikatessa aukeaa sivuston menu.
+                        </p>
+                        <h4>Vaatimukset</h4>
+                        <ul>
+                            <li>Näytön päälle avautuva mobiilinavigaatio</li>
+                            <li>
+                                Voi näkyä vain mobiilissa eli tietokoneella voi
+                                olla oma navi
+                            </li>
+                            <li>Nappula, josta navi suljetaan ja avataan</li>
+                            <li>Navin linkkiä klikatessa navi sulkeutuu</li>
+                            <li>
+                                Luo transitio navin aukeamiselle ja
+                                sulkeutumiselle, jotta se ei vain pärskähdä
+                                esiin
+                            </li>
+                        </ul>
+                    </div>
                     <div class="files-container">
                         <h5>Toteutuksen tiedostot</h5>
                         <ul class="files">
@@ -167,15 +195,31 @@
             <section id="modal">
                 <div class="section-header">
                     <h3 class="section-heading">2. Aukeava modaali</h3>
-                    <h3 class="points">8p</h3>
+                    <h3 class="points">7p</h3>
                 </div>
                 <div class="instructions-container">
-                    <p>
-                        Modaali on sivuston päälle avautuva ikkuna, johon usein
-                        laitetaan tietoa, joka ei syystä tai toisesta mahdu
-                        sivuston muuhun rakenteeseen. Alla olevista napeista
-                        voit avata erilaisia modaalielementtejä.
-                    </p>
+                    <div>
+                        <p>
+                            Modaali on sivuston päälle avautuva ikkuna, johon
+                            usein laitetaan tietoa, joka ei syystä tai toisesta
+                            mahdu sivuston muuhun rakenteeseen. Alla olevista
+                            napeista voit avata erilaisia modaalielementtejä.
+                        </p>
+                        <h4>Vaatimukset</h4>
+                        <ul>
+                            <li>
+                                Luo väh yksi elementti, jota klikatessa aukeaa
+                                sivuston päälle ikkuna.
+                            </li>
+                            <li>
+                                Jos, ikkuna ei täytä koko ruutua luo elementti,
+                                joka edes osittain peittää sivun muun sisällön
+                                (esim, blurraus, overlay aka läpikuultava
+                                tausta)
+                            </li>
+                            <li>Modaalin pitää pystyä sulkea nappulasta</li>
+                        </ul>
+                    </div>
                     <div class="files-container">
                         <h5>Toteutuksen tiedostot</h5>
                         <ul class="files">
@@ -201,17 +245,32 @@
             <!--HAITARIELEMENTIT-->
             <section id="accordio">
                 <div class="section-header">
-                    <h3 class="section-heading">Haitarielementti</h3>
-                    <h3 class="points">5p</h3>
+                    <h3 class="section-heading">3. Haitarielementti</h3>
+                    <h3 class="points">7p</h3>
                 </div>
                 <div class="instructions-container">
-                    <p>
-                        Haitarielementti on sivuston osa, joka avautuu ja
-                        sulkeutuu klikatessa. Tämä on hyödyllinen esimerkiksi
-                        silloin, kun sivustolla on paljon tekstiä, jota ei
-                        haluta näyttää heti alkuun. Tässä esimerkissä on kolme
-                        haitarielementtiä, joista viimeistä ei voi avata.
-                    </p>
+                    <div>
+                        <p>
+                            Haitarielementti on sivuston osa, joka avautuu ja
+                            sulkeutuu klikatessa. Tämä on hyödyllinen
+                            esimerkiksi silloin, kun sivustolla on paljon
+                            tekstiä, jota ei haluta näyttää heti alkuun. Tässä
+                            esimerkissä on kolme haitarielementtiä, joista
+                            viimeistä ei voi avata.
+                        </p>
+                        <h4>Vaatimukset</h4>
+                        <ul>
+                            <li>
+                                Haitarielementin otsikkoa klikatessa alapuolelle
+                                pitää ilmestyä sisältöä
+                            </li>
+                            <li>Sisältö ilmestyy ja häviää transitiolla</li>
+                            <li>
+                                Useampi haitarielementti ei voi olla auki samaan
+                                aikaan
+                            </li>
+                        </ul>
+                    </div>
                     <div class="files-container">
                         <h5>Toteutuksen tiedostot</h5>
                         <ul class="files">
@@ -260,17 +319,40 @@
             <!--ELEMENTTIEN FILTTERÖINTI-->
             <section id="filter">
                 <div class="section-header">
-                    <h3 class="section-heading">Elementtien filtteröinti</h3>
-                    <h3 class="points">6p</h3>
+                    <h3 class="section-heading">4. Elementtien filtteröinti</h3>
+                    <h3 class="points">9p</h3>
                 </div>
                 <div class="instructions-container">
-                    <p>
-                        Todennäköisesti sivuillasi on projekteja joita haluaisit
-                        kenties järjestellä sen mukaan, mitä tägejä niihin
-                        liittyy, tai mihin kategorioihin projekti kuuluu? Anna
-                        käyttäjälle selkeä vinkki siitä, mitä elementtiä tulee
-                        painaa. Miten viestität filtterien resetöinnin?
-                    </p>
+                    <div>
+                        <p>
+                            Todennäköisesti sivuillasi on projekteja joita
+                            haluaisit kenties järjestellä sen mukaan, mitä
+                            tägejä niihin liittyy, tai mihin kategorioihin
+                            projekti kuuluu? Anna käyttäjälle selkeä vinkki
+                            siitä, mitä elementtiä tulee painaa. Miten viestität
+                            filtterien resetöinnin?
+                        </p>
+                        <h4>Vaatimukset</h4>
+                        <ul>
+                            <li>
+                                Luo nappulat, joista voi valita näytettävät
+                                elementit
+                            </li>
+                            <li>Vähintään kaksi eri filtteriä</li>
+                            <li>
+                                Filtterin olessa aktiivinen sitä vastaavan
+                                nappulan kuuluu indikoida olevansa aktiivinen
+                            </li>
+                            <li>
+                                Luo reset nappula, joka tyhjentää
+                                filtteröintivalinnat
+                            </li>
+                            <li>
+                                Voit valita: vain yksi filtteri aktiivinen
+                                kerrallaan tai usempi
+                            </li>
+                        </ul>
+                    </div>
                     <div class="files-container">
                         <h5>Toteutuksen tiedostot</h5>
                         <ul class="files">
@@ -332,13 +414,36 @@
             <!--KUVA KOKO RUUDULLE-->
             <section id="full-screen">
                 <div class="section-header">
-                    <h3 class="section-heading">Avaa kuva koko ruudulle</h3>
-                    <h3 class="points">10p</h3>
+                    <h3 class="section-heading">5. Avaa kuva koko ruudulle</h3>
+                    <h3 class="points">11p</h3>
                 </div>
                 <div class="instructions-container">
-                    <p>
-                        Usein sivustolla on kuvia, joita käyttäjä haluaa tarkastella lähemmin. Yleinen tapa tähän on avata kuva isompana erilliseen modaaliin klikatessa. Tässä esimerkissä kuvat avautuvat koko ruudun kokoisina, ja käyttäjä voi sulkea kuvan klikkaamalla X:ää.
-                    </p>
+                    <div>
+                        <p>
+                            Usein sivustolla on kuvia, joita käyttäjä haluaa
+                            tarkastella lähemmin. Yleinen tapa tähän on avata
+                            kuva isompana erilliseen modaaliin klikatessa. Tässä
+                            esimerkissä kuvat avautuvat koko ruudun kokoisina,
+                            ja käyttäjä voi sulkea kuvan klikkaamalla X:ää.
+                        </p>
+                        <h4>Vaatimukset</h4>
+                        <ul>
+                            <li>
+                                Pientä kuvaa klikatessa saman kuvan täytyy
+                                avautua koko ruudun kokoiseen ikkunaan
+                            </li>
+                            <li>Kuvat pitää pystyä sulkea nappulasta</li>
+                            <li>Avautuvia kuvia pitää olla vähintään 2kpl</li>
+                            <li>
+                                Näytä suurempi kuva vaihtamalla sen
+                                'src'-attribuuttia
+                            </li>
+                            <li>
+                                Luo tapahtumakuuntelijat jokaiselle pikkukuvalle
+                                käyttäen for-looppia (esim. forEach)
+                            </li>
+                        </ul>
+                    </div>
                     <div class="files-container">
                         <h5>Toteutuksen tiedostot</h5>
                         <ul class="files">
@@ -350,9 +455,7 @@
                 </div>
                 <div class="example-container">
                     <div id="img-viewer">
-                        <button id="close-image-button">
-                            &times;
-                        </button>
+                        <button id="close-image-button">&times;</button>
                         <img id="full-screen-image" />
                     </div>
                     <div class="img-list">
@@ -371,17 +474,48 @@
             <!--VERTIKAALIT OSIO-INDIKAATTORIT-->
             <section id="vertical-scroll-dots">
                 <div class="section-header">
-                    <h3 class="section-heading">Vertikaalit osio-indikaattorit</h3>
-                    <h3 class="points">10p</h3>
+                    <h3 class="section-heading">
+                        6. Vertikaalit osio-indikaattorit
+                    </h3>
+                    <h3 class="points">13p</h3>
                 </div>
                 <div class="instructions-container">
-                    <p>
-                        Sivustolla on usein pitkiä sivuja, joissa on paljon
-                        sisältöä. Tässä esimerkissä on toteutettu vertikaaliset
-                        osio-indikaattorit vasempaan reunaan, jotka kertovat käyttäjälle, missä
-                        kohdassa sivua hän on. Klikkaamalla indikaattoria
-                        käyttäjä siirtyy kyseiseen osioon.
-                    </p>
+                    <div>
+                        <p>
+                            Sivustolla on usein pitkiä sivuja, joissa on paljon
+                            sisältöä. Tässä esimerkissä on toteutettu
+                            vertikaaliset osio-indikaattorit vasempaan reunaan,
+                            jotka kertovat käyttäjälle, missä kohdassa sivua hän
+                            on. Klikkaamalla indikaattoria käyttäjä siirtyy
+                            kyseiseen osioon.
+                        </p>
+                        <h4>Vaatimukset</h4>
+                        <ul>
+                            <li>Osiota pitää olla vähintään 4</li>
+                            <li>
+                                Indikaattoreiden pitää olla ankkurilinkkejä
+                                osioihin (<em>href="#osion-id"</em>)
+                            </li>
+                            <li>
+                                Indikaattorin tyylin tulee näyttää aktiivinen
+                                osio
+                            </li>
+                            <li>
+                                Indikaattorin aktiivisuuden voit laskea
+                                haluamallasi tavalla, esimerkissä elementti on
+                                aktiivinen ollessa näytön keskialueaalla
+                            </li>
+                            <li>
+                                Inkitaattorien tyyli on vapaavalintainen (esim.
+                                logo, laatikko, osion nimi)
+                            </li>
+                            <li>
+                                Luo indikaattori-elementit JS:llä eli ÄLÄ
+                                kirjoita niitä suoraan HTML:ääm (kts. esimerkki:
+                                'appendChild')
+                            </li>
+                        </ul>
+                    </div>
                     <div class="files-container">
                         <h5>Toteutuksen tiedostot</h5>
                         <ul class="files">
@@ -391,21 +525,31 @@
                         </ul>
                     </div>
                 </div>
-                <div id="scroll-dot-container">
-                </div>
+                <div id="scroll-dot-container"></div>
             </section>
 
             <!--DARK MODE-->
             <section id="vertical-scroll-dots">
                 <div class="section-header">
-                    <h3 class="section-heading">Dark/Light mode</h3>
-                    <h3 class="points">4p</h3>
+                    <h3 class="section-heading">7. Dark/Light mode</h3>
+                    <h3 class="points">7p</h3>
                 </div>
                 <div class="instructions-container">
-                    <p>
-                        Tässä esimerkissä on toteutettu dark mode -toiminto, joka
-                        vaihtaa sivuston värimaailman tummaksi ja vaaleaksi nappulaa painamalla.
-                    </p>
+                    <div>
+                        <p>
+                            Tässä esimerkissä on toteutettu dark mode -toiminto,
+                            joka vaihtaa sivuston värimaailman tummaksi ja
+                            vaaleaksi nappulaa painamalla.
+                        </p>
+                        <h4>Vaatimukset</h4>
+                        <ul>
+                            <li>Luo nappula, jonka tyyli muuttuu klikatessa</li>
+                            <li>
+                                Klikatessa sivuston tyylii muuttuu. Sivuston
+                                käytettävyys ei saa hajota.
+                            </li>
+                        </ul>
+                    </div>
                     <div class="files-container">
                         <h5>Toteutuksen tiedostot</h5>
                         <ul class="files">
@@ -416,31 +560,52 @@
                     </div>
                 </div>
                 <div class="example-container">
-                        <div class="dark-mode-button-container">
-                            <p>Vaihda värimaailmaa</p>
-                            <button id="dark-mode-button">
-                                <div id="button-indicator"></div>
-                            </button>
-                        </div>
+                    <div class="dark-mode-button-container">
+                        <p>Vaihda värimaailmaa</p>
+                        <button id="dark-mode-button">
+                            <div id="button-indicator"></div>
+                        </button>
                     </div>
+                </div>
             </section>
 
-            <!--TERVEHDI KÄYTTÄJÄÄ JA KERRO AIKA-->
+            <!--AJASTETTU TERVEHDYS, JOSSA AIKAAN SIDOTTUA TIETOA-->
             <section id="tell-time">
                 <div class="section-header">
                     <h3 class="section-heading">
-                        Tervehdi käyttäjää ja kerro aika
+                        8. Ajastettu tervehdys, jossa aikaan sidottua tietoa
                     </h3>
-                    <h3 class="points">4p</h3>
+                    <h3 class="points">6p</h3>
                 </div>
 
                 <div class="instructions-container">
-                    <p>
-                        Sivuilla käyttäjälle voi kertoa ajankohtaisia asioita,
-                        kuten päivämäärän tai kellonajan. Tässä esimerkissä
-                        käyttäjälle kerrotaan päivämäärä ja tervehditään häntä.
-                        Tervehdys on näkyvissä vain 10 sekuntia.
-                    </p>
+                    <div>
+                        <p>
+                            Sivuilla käyttäjälle voi kertoa ajankohtaisia
+                            asioita, kuten päivämäärän tai kellonajan. Tässä
+                            esimerkissä käyttäjälle kerrotaan päivämäärä ja
+                            tervehditään häntä. Tervehdys on näkyvissä vain 10
+                            sekuntia.
+                        </p>
+                        <h4>Vaatimukset</h4>
+                        <ul>
+                            <li>
+                                Luo ajastettu viesti, joka katoaa x sekunnin
+                                kulutta. Käytä 'setTimeout'-funktiota
+                            </li>
+                            <li>
+                                Viestin pitää kertoa, jotain sen hetkiseen
+                                aikaan liittyvää esim. päivämäärä. Käytä
+                                'Date'-objektia ja lokaalia aikavyöhykettä (kts.
+                                esimerkki)
+                            </li>
+                            <li>
+                                Indikoi käyttäjää viestin näkymisen kestosta
+                                reaaliajassa (kts. CSS animation)
+                            </li>
+                            <li>Piilota viesti ajan kuluttua loppuun</li>
+                        </ul>
+                    </div>
                     <div class="files-container">
                         <h5>Toteutuksen tiedostot</h5>
                         <ul class="files">
@@ -472,15 +637,31 @@
             <!--HIIRTÄ SEURAAVA ELEMENTTI-->
             <section id="mouse-tracking">
                 <div class="section-header">
-                    <h3 class="section-heading">Hiirtä seuraava elementti</h3>
-                    <h3 class="points">4p</h3>
+                    <h3 class="section-heading">
+                        9. Hiirtä seuraava elementti
+                    </h3>
+                    <h3 class="points">6p</h3>
                 </div>
                 <div class="instructions-container">
-                    <p>
-                        Tässä esimerkissä on sidottu hiiren positio sivulla
-                        silmän pupilli-elementtien
-                        <em>margin-top</em> ja <em>margin-left</em> -arvoihin
-                    </p>
+                    <div>
+                        <p>
+                            Tässä esimerkissä on sidottu hiiren positio sivulla
+                            silmän pupilli-elementtien
+                            <em>margin-top</em> ja
+                            <em>margin-left</em> -arvoihin
+                        </p>
+                        <h4>Vaatimukset</h4>
+                        <ul>
+                            <li>
+                                Seuraa hiiren sijaintia valitsemassasi
+                                elementissä (Esimerkissä body)
+                            </li>
+                            <li>
+                                Liikuta jotain elementtiä hiiren sijainnin
+                                mukaisesti
+                            </li>
+                        </ul>
+                    </div>
                     <div class="files-container">
                         <h5>Toteutuksen tiedostot</h5>
                         <ul class="files">

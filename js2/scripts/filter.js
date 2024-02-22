@@ -22,6 +22,12 @@ const allBoxes = [...aBoxes, ...bBoxes, ...cBoxes];
 
 // Nappi A:lle
 buttonA.addEventListener("click", () => {
+  // Annetaan nappulalle luokka active, jotta käyttäjä näkee, mikä nappi on valittuna...
+  buttonA.classList.add("active");
+  // ... ja poistetaan se muilta napeilta
+  buttonB.classList.remove("active");
+  buttonC.classList.remove("active");
+
   // Mäpätään a laatikot näkyviin muokkaamalla suoraan tyylejä 
   // saman voisi tehdä myös lisäämällä ja poistamalla luokkia
   aBoxes.map((box) => {
@@ -40,6 +46,10 @@ buttonA.addEventListener("click", () => {
 
 // Nappi B:lle
 buttonB.addEventListener("click", () => {
+  buttonB.classList.add("active");
+  buttonA.classList.remove("active");
+  buttonC.classList.remove("active");
+
   bBoxes.map((box) => {
     box.style.display = "flex";
     box.style.opacity = "1";
@@ -55,6 +65,10 @@ buttonB.addEventListener("click", () => {
 
 // Nappi C:lle
 buttonC.addEventListener("click", () => {
+  buttonC.classList.add("active");
+  buttonA.classList.remove("active");
+  buttonB.classList.remove("active");
+
   cBoxes.map((box) => {
     box.style.display = "flex";
   });
@@ -69,6 +83,11 @@ buttonC.addEventListener("click", () => {
 
 // Lisätään reset-napille tapahtumakuuntelija
 reset.addEventListener("click", () => {
+  // Poistetaan kaikilta napeilta luokka active
+  buttonA.classList.remove("active");
+  buttonB.classList.remove("active");
+  buttonC.classList.remove("active");
+  
   allBoxes.map((box) => {
     // Asetetaan kaikki laatikot näkyviin ja palautetaan niiden opacity alkuperäiseksi
     box.style.display = "flex";
