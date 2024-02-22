@@ -1,5 +1,10 @@
 /*Sivuston perustyylittelyä*/
 
+html {
+    /*smooth scroll*/
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -8,11 +13,6 @@ body {
     color: rgb(34, 34, 34);
     position: relative;
     transition: all 0.5s ease;
-}
-
-.dark-mode {
-    background: rgb(34, 34, 34);
-    color: #efefef;
 }
 
 main {
@@ -34,7 +34,8 @@ main {
 }
 
 section {
-    margin-bottom: 60px;
+    padding-top: 60px;
+    min-height: 40vh;
 }
 
 h1 {
@@ -169,7 +170,7 @@ a {
     animation: draw-center 6s linear infinite;
 }
 
-.white-container{
+.white-container {
     animation: rotate 10s linear infinite;
     position: absolute;
     left: 0;

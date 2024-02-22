@@ -1,0 +1,57 @@
+body.dark-mode {
+    background: rgb(34, 34, 34);
+    color: #efefef;
+}
+
+body.dark-mode .example-container {
+    background-color: #171717;
+}
+
+body.dark-mode .scroll-dot {
+    border: 2px solid #efefef;
+}
+
+.dark-mode-button-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#dark-mode-button {
+    width: 70px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #efefef;
+    border: 2px solid #333;
+    position: relative;
+    cursor: pointer;
+    transition: 0.4s;
+    box-sizing: border-box;
+}
+
+#button-indicator {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 32px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    transition: 0.3s;
+    background-color: #333;
+}
+
+#dark-mode-button.active {
+    background-color: #333;
+    border: 2px solid #efefef;
+}
+
+#dark-mode-button.active #button-indicator {
+    background-color: #efefef;
+    transform: translateX(30px);
+}
+
+#dark-mode-button:hover #button-indicator {
+    background-color: hotpink;
+}
