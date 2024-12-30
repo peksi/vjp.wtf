@@ -20,31 +20,37 @@
             <h1>😈VJP Sanakirja😈</h1>
             <p>Tämä sanakirja avaa kurssilla käytettävää slangia selkokieleksi.</p>
             <section class="table">
+                <h2>Design</h2>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>wireframe</td>
+                            <td>rautalanka/luonnos/suunnitelma. Miltä ohjelma tai design tulee pääpiirteittään näyttämään ilman visuaalisia yksityiskohtia. Esim. Mitä erilaisia komponentteja on ja mihin ne asetetaan?</td>
+                        </tr>
+                        <tr>
+                            <td>UX</td>
+                            <td>User eXperience; käyttäjäkokemus. Käyttäjän kokonaisvaltaiset mietteet, ajatukset ja tunteet tuotteesta tuotteen käyttämisen aikana ja sen jälkeen</td>
+                        </tr>
+                        <tr>
+                            <td>UI</td>
+                            <td>User Interface; käyttöliittymä. Rakennettu kommunikointiväline ihmisen ja koneen välillä (VJP-kontekstissa ainakin, onhan toki esim. automaattiolypsykoneiden suunnittelussa mietitty käyttöliittymää, jotta lehmät ois mahis tyytyväisiä :D) Voi olla graafinen (esim. Figma (eli suunnittelet käyttöliittymällä käyttöliittymiä :D)) tai tekstipohjainen (esim. komentopaneeli)</td>
+                        </tr>
+                        <tr>
+                            <td>WCAG</td>
+                            <td>Web Content Accessibility Guidelines: joukko ohjeita, jotka auttaa tekemään nettisisällöstä kaikille saavutettavaa</td>
+                        </tr>
+                        <tr>
+                            <td>responsiivisuus</td>
+                            <td>Sivun ulkoasun ja sisällön muuttuminen eri kokoisille näytöille. Tästä vastaa CSS</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>GIT</h2>
                 <table>
                     <tbody>
                         <tr>
                             <td>Sana</td>
                             <td>Selitys</tdx>
-                        </tr>
-                        <tr>
-                            <td>deployaaminen</td>
-                            <td>Ohjelma (esim. verkkosivu) siirretään omasta työskentely-ympäristöstä (esim. Vs Code) muiden saataville (esim. ‘insert se miten tehdään kurssilla’)</td>
-                        </tr>
-                        <tr>
-                            <td>kirjasto</td>
-                            <td>kokoelma koodia/yksinkertaistettuja tapoja rakentaa ohjelmia, jotta kaikkea ei aina tarvitse koodata ihan alusta alkaen. Vrt. scalan korkean tason käskyt esim. map() tai forEach()</td>
-                        </tr>
-                        <tr>
-                            <td>framework</td>
-                            <td>Tapa rakentaa ohjelmaa. Määrittelee peruspilarit tekemiselle, kuten erilaisia komponentteja ja rakenteita, sääntöjä ja toimintoja. Esim. React</td>
-                        </tr>
-                        <tr>
-                            <td>serveri</td>
-                            <td>palvelin; vähän niinkun “tietokone” muttei välttämättä fyysinen; looginen rakennelma. Suorittaa siltä pyydettyjä aktiviteettaja esim. laskee, lähettää dataa jne. Rakennelma voi olla esim datakeskuksessa tai cloudissa (jotka toki pohjimmiltaan ovat myös datakeskuksissa)</td>
-                        </tr>
-                        <tr>
-                            <td>wireframe</td>
-                            <td>rautalanka/luonnos/suunnitelma. Miltä ohjelma tai design tulee pääpiirteittään näyttämään ilman visuaalisia yksityiskohtia. Esim. mitä erilaisia komponentteja on ja mihin ne asetetaan?</td>
                         </tr>
                         <tr>
                             <td>GIT</td>
@@ -59,12 +65,86 @@
                             <td>Tietokansio, johon voi tallentaa kooditiedostoja ja muita projektin tiedostoja. Voi olla esim. GIT:ssä tai paikallisesti omalla koneella. Pitää koneella sekä GIT:ssä myös kirjaa versiotiedoista sisältöjen lisäksi</td>
                         </tr>
                         <tr>
+                            <td>Commit</td>
+                            <td>“Sitoumus”; laitat muokkaamasi koodin paikalliseen repositorioosi</td>
+                        </tr>
+                        <tr>
+                            <td>Push/pull</td>
+                            <td>Siirrät paikallisessa ympäristössäsi tekemät muutokset yleiseen repositorioon, joka voi olla vaikka version.aalto.fi:ssä tai git hubissa</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Koodaus</h2>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>deployaaminen</td>
+                            <td>Ohjelma (esim. verkkosivu) siirretään omasta työskentely-ympäristöstä (esim. Vs Code) muiden saataville (esim. ‘insert se miten tehdään kurssilla’)</td>
+                        </tr>
+                        <tr>
+                            <td>kirjasto</td>
+                            <td>kokoelma koodia/yksinkertaistettuja tapoja rakentaa ohjelmia, jotta kaikkea ei aina tarvitse koodata ihan alusta alkaen. Vrt. scalan korkean tason käskyt esim. map() tai forEach()</td>
+                        </tr>
+                        <tr>
+                            <td>framework</td>
+                            <td>Tapa rakentaa ohjelmaa. Määrittelee peruspilarit tekemiselle, kuten erilaisia komponentteja ja rakenteita, sääntöjä ja toimintoja. Esim. React</td>
+                        </tr>
+                        <tr>
+                            <td>syntaksi</td>
+                            <td>Miten kirjoittaa koodia niin, että tietokone ymmärtää sen, eli esim. mihin laitat sulut, pisteet jne. Esim. et voi Scalassa kirjoittaa println“moi” vaan on kirjoitettava println(“moi”)</td>
+                        </tr>
+                        <tr>
+                            <td>responsiivisuus</td>
+                            <td>Katso design</td>
+                        </tr>
+                        <tr>
+                            <td>Flexbox</td>
+                            <td>CSS:n tapa järjestellä verkkosivun sisältöjen paikkoja joustavasti</td>
+                        </tr>
+                        <tr>
+                            <td>Asynkroonisuus</td>
+                            <td>Viittaa siihen, että kaikkea ei suoritetakkaan absoluuttisessa asetetussa järjestyksessä, vaan tietty osa koodia voidaan asettaa asynkroniseksi, jolloin se suoritetaan eri aikataululla ja muu koodin suoritus voi esimerkiksi jatkua, vaikka tämä osio jäisi taustalla suorittumaan</td>
+                        </tr>
+                        <tr>
+                            <td>Node.js</td>
+                            <td>Pyörittää Javascriptiä ikään kuin selain, mutta muualla, jotta Javascriptiä voidaan käyttää myös backend koodaukseen</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Yleinen verkkoliikenne, tietorakenne ja apit</h2>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>serveri</td>
+                            <td>palvelin; vähän niinkun “tietokone” muttei välttämättä fyysinen; looginen rakennelma. Suorittaa siltä pyydettyjä aktiviteettaja esim. laskee, lähettää dataa jne. Rakennelma voi olla esim datakeskuksessa tai cloudissa (jotka toki pohjimmiltaan ovat myös datakeskuksissa)</td>
+                        </tr>
+                        <tr>
                             <td>Hakemisto</td>
                             <td>Tietokoneen tapa järjestää tietoa, jotta se pystyy esim. hakemaan niitä tehokkaasti. Voi ajatella esim. kansioina, joiden sisällä on sisältö tai/ja uusia kansioita</td>
                         </tr>
                         <tr>
-                            <td>Commit</td>
-                            <td>“Sitoumus”; laitat muokkaamasi koodin paikalliseen repositorioosi</td>
+                            <td>DOM-puu</td>
+                            <td>Tapa, jolla verkkosivun sisältö järjestellään selaimelle ymmärrettäväksi rakenteeksi. Se siis ikään kuin kertoo, miten eri osat liittyvät toisiinsa ja miten käsitellä niitä. Esim. <head></head> osion sisällä voi olla <title></title> osio. Osista puhutaan solmuina ja rakenteesta voikin piirtää puukaavion.</td>
+                        </tr>
+                        <tr>
+                            <td>URL</td>
+                            <td>Uniform Resource Locator: polku internetistä löytyvään hakemistoon. Vähän niinkuin reittiohjeet tiettyyn osoitteeseen jollain palvelimella, josta tietyn verkkosivun tiedot löytyvät</td>
+                        </tr>
+                        <tr>
+                            <td>Localhost</td>
+                            <td>Localhost on lokaali verkko-osoite, jolla pystyt ajamaan omalla koneellasi internettiä vaativaa palvelua esim. lokaalia verkkokehitystä. Näin et joudu hostaamaan palvelua verkossa, kun teet kehitystyötä.</td>
+                        </tr>
+                        <tr>
+                            <td>IP-osoite</td>
+                            <td>tunniste, yksilöllinen “osoite”, jolla laite tunnistetaan internetissä tai paikallisessa verkossa</td>
+                        </tr>
+                        <tr>
+                            <td>http/https</td>
+                            <td>Protokolla, eli määritelty tapa, jolla tietokoneet kommunikoivat keskenään, eli esim. pyytävät toisiltaan tietoja ja lähettävät toisilleen tietoja. Kun avaat verkkosivun, koneesi tekee https-pyynnön jollekin palvelimelle saadakseen sivun html, css yms. muut tiedot</td>
+                        </tr>
+                        <tr>
+                            <td>Api</td>
+                            <td>Ohjelmointirajapinta, joka mahdollistaa kahden ohjelman tai ohjelmiston osan välisen kommunikoinnin, eli toinen ohjelma voi esim. jakaa toiselle tietoja</td>
                         </tr>
                     </tbody>
                 </table>
