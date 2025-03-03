@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Promises Demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>JavaScript Promises</h1>
+        <p>Interactive examples of JavaScript Promises in action</p>
+      </header>
+
+      <div class="content-sections">
+        <!-- Promise Chaining Section -->
+        <section class="example-section" id="chaining">
+          <div class="example-card">
+            <h2>Promise Chaining</h2>
+            <p>Sequential operations using Promise chains</p>
+            <div class="example-description">
+              <p>
+                This example simulates fetching a user, then their posts, then
+                the comments on their latest post.
+              </p>
+            </div>
+
+            <div class="code-example">
+              <div class="code-tabs">
+                <button class="code-tab active" data-tab="then-chain">
+                  then/catch
+                </button>
+                <button class="code-tab" data-tab="async-chain">
+                  async/await
+                </button>
+              </div>
+              <div class="code-content active" id="then-chain">
+                <pre><code>// Promise chaining example
+// Step 1: Fetch user data
+fetchUser(userId)
+  .then(user => {
+    console.log(`✅ Fetched user: ${user.name}`);
+    // Step 2: Use the user ID to fetch their posts
+    return fetchPosts(user.id);  // Return a new promise
+  })
+  .then(posts => {
+    console.log(`✅ Fetched ${posts.length} posts`);
+    console.log(`Latest post: ${posts.latest.title}`);
+    // Step 3: Use the latest post ID to fetch comments
+    return fetchComments(posts[0].id);  // Return another promise
+  })
+  .then(comments => {
+    console.log(`✅ Fetched ${comments.length} comments on latest post`);
+    console.log(`Sample comment: ${comments[0]}`);
+    // Chain complete!
+  })
+  .catch(error => {
+    // Any error in the chain is caught here
+    console.error(`Error: ${error.message}`);
+  });</code></pre>
+              </div>
+              <div class="code-content" id="async-chain">
+                <pre><code>// Async/await version of the promise chain
+async function fetchUserData(userId) {
+  try {
+    // Step 1: Fetch user data
+    const user = await fetchUser(userId);
+    console.log(`✅ Fetched user: ${user.name}`);
+    
+    // Step 2: Use the user ID to fetch their posts
+    const posts = await fetchPosts(user.id);
+    console.log(`✅ Fetched ${posts.length} posts`);
+    console.log(`Latest post: ${posts.latest.title}`);
+    
+    // Step 3: Use the latest post ID to fetch comments
+    const comments = await fetchComments(posts[0].id);
+    console.log(`✅ Fetched ${comments.length} comments on latest post`);
+    console.log(`Sample comment: ${comments[0]}`);
+    
+    // All operations complete!
+    return comments;
+  } catch (error) {
+    // Any error in the sequence is caught here
+    console.error(`Error: ${error.message}`);
+  }
+}
+
+// Call the async function
+fetchUserData(userId);</code></pre>
+              </div>
+            </div>
+
+            <div class="controls">
+              <button id="start-chain">Start Chain</button>
+              <button id="reset-chain">Reset</button>
+            </div>
+            <div class="result-container">
+              <div class="progress-steps">
+                <div class="step" id="step1">
+                  <div class="step-number">1</div>
+                  <div class="step-text">Fetching User</div>
+                  <div class="step-status"></div>
+                </div>
+                <div class="step" id="step2">
+                  <div class="step-number">2</div>
+                  <div class="step-text">Fetching Posts</div>
+                  <div class="step-status"></div>
+                </div>
+                <div class="step" id="step3">
+                  <div class="step-number">3</div>
+                  <div class="step-text">Fetching Comments</div>
+                  <div class="step-status"></div>
+                </div>
+              </div>
+              <div class="result-box" id="chain-result"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Promise.all Section -->
+        <section class="example-section" id="all">
+          <div class="example-card">
+            <h2>Promise.all</h2>
+            <p>Run multiple promises in parallel</p>
+            <div class="example-description">
+              <p>
+                This example simulates fetching data from three different API
+                endpoints simultaneously.
+              </p>
+            </div>
+
+            <div class="code-example">
+              <div class="code-tabs">
+                <button class="code-tab active" data-tab="then-all">
+                  then/catch
+                </button>
+                <button class="code-tab" data-tab="async-all">
+                  async/await
+                </button>
+              </div>
+              <div class="code-content active" id="then-all">
+                <pre><code>// Promise.all example - run multiple promises in parallel
+// Create an array of promises
+const promises = [
+  fetchWeatherData(),    // Promise 1: Weather API
+  fetchStockPrices(),    // Promise 2: Stock API
+  fetchNewsHeadlines()   // Promise 3: News API
+];
+
+// Wait for all promises to resolve
+Promise.all(promises)
+  .then(results => {
+    // results is an array containing the resolved values
+    // in the same order as the promises array
+    const [weather, stocks, news] = results;
+    
+    console.log(`Weather: ${weather.condition}`);
+    console.log(`Stock: $${stocks.price}`);
+    console.log(`News: ${news.headlines.map(headline => `"${headline}"`).join("\n ")}`);
+    
+    // All data is available at the same time!
+  })
+  .catch(error => {
+    // If ANY promise rejects, the catch block is triggered
+    console.error(`One of the requests failed: ${error.message}`);
+  });</code></pre>
+              </div>
+              <div class="code-content" id="async-all">
+                <pre><code>// Async/await version of Promise.all
+async function fetchAllData() {
+  try {
+    // Create an array of promises
+    const promises = [
+      fetchWeatherData(),    // Promise 1: Weather API
+      fetchStockPrices(),    // Promise 2: Stock API
+      fetchNewsHeadlines()   // Promise 3: News API
+    ];
+    
+    // Wait for all promises to resolve with await
+    const results = await Promise.all(promises);
+    
+    // Destructure the results array
+    const [weather, stocks, news] = results;
+    
+    console.log(`Weather: ${weather.condition}`);
+    console.log(`Stock: $${stocks.price}`);
+    console.log(`News: ${news.headlines.map(headline => `"${headline}"`).join("\n ")}`);
+    
+    // All data is available at the same time!
+    return results;
+  } catch (error) {
+    // If ANY promise rejects, the catch block is triggered
+    console.error(`One of the requests failed: ${error.message}`);
+  }
+}
+
+// Call the async function
+fetchAllData();</code></pre>
+              </div>
+            </div>
+
+            <div class="controls">
+              <button id="start-all">Start Promise.all</button>
+              <button id="reset-all">Reset</button>
+            </div>
+            <div class="result-container">
+              <div class="parallel-tasks">
+                <div class="task" id="task1">
+                  <div class="task-label">Weather API</div>
+                  <div class="task-progress">
+                    <div class="progress-bar"></div>
+                  </div>
+                  <div class="task-status"></div>
+                </div>
+                <div class="task" id="task2">
+                  <div class="task-label">Stock API</div>
+                  <div class="task-progress">
+                    <div class="progress-bar"></div>
+                  </div>
+                  <div class="task-status"></div>
+                </div>
+                <div class="task" id="task3">
+                  <div class="task-label">News API</div>
+                  <div class="task-progress">
+                    <div class="progress-bar"></div>
+                  </div>
+                  <div class="task-status"></div>
+                </div>
+              </div>
+              <div class="result-box" id="all-result"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Promise Rejection Section -->
+        <section class="example-section" id="errors">
+          <div class="example-card">
+            <h2>Promise Rejection</h2>
+            <p>Handling errors with Promises</p>
+            <div class="example-description">
+              <p>
+                This example demonstrates how to handle rejected promises using
+                catch() and try/catch with async/await.
+              </p>
+            </div>
+
+            <div class="code-example">
+              <div class="code-tabs">
+                <button class="code-tab active" data-tab="then-error">
+                  then/catch
+                </button>
+                <button class="code-tab" data-tab="async-error">
+                  async/await
+                </button>
+              </div>
+              <div class="code-content active" id="then-error">
+                <pre><code>// Using .catch() with promise chains
+fetchData(endpoint)
+  .then(data => {
+    console.log('Success:', data);
+  })
+  .catch(error => {
+    // Handle any errors that occurred
+    console.error('Error with .catch():', error.message);
+  });</code></pre>
+              </div>
+              <div class="code-content" id="async-error">
+                <pre><code>// Using try/catch with async/await
+async function fetchDataSafely() {
+  try {
+    // await lets us use promises with try/catch
+    const data = await fetchData(endpoint);
+    console.log('Success:', data);
+  } catch (error) {
+    // Handle any errors that occurred
+    console.error('Error with try/catch:', error.message);
+  }
+}
+
+// Call the async function
+fetchDataSafely();</code></pre>
+              </div>
+            </div>
+
+            <div class="controls">
+              <label>Simulation:</label>
+              <select id="error-scenario">
+                <option value="success">Successful request</option>
+                <option value="network">Network error</option>
+                <option value="auth">Authentication error</option>
+                <option value="server">Server error</option>
+              </select>
+              <button id="start-error">Run Example</button>
+              <button id="reset-error">Reset</button>
+            </div>
+            <div class="result-container">
+              <div class="method-comparison">
+                <div class="method" id="method1">
+                  <h3>Using .catch()</h3>
+                  <div class="method-result"></div>
+                </div>
+                <div class="method" id="method2">
+                  <h3>Using try/catch</h3>
+                  <div class="method-result"></div>
+                </div>
+              </div>
+              <div class="result-box" id="error-result"></div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <footer>
+        <p>Created as a demonstration of JavaScript Promises</p>
+      </footer>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
