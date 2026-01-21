@@ -5,12 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- css -->
     <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital@0;1&display=swap"
-      rel="stylesheet"
-    />
 
     <title>👑 VJP.WTF</title>
   </head>
@@ -73,98 +67,53 @@
       }
     </style>
     <div id="container">
-      <h1>👑 VJP.WTF</h1>
-      <p class="description">
-        This is a site for all the unofficial resources used in the CS-C1180
-        Course at the Aalto University.
-      </p>
+      <header class="hero">
+        <h1>👑 VJP.WTF</h1>
+        <p class="description">
+          Unofficial resources for CS-C1180 at Aalto University
+        </p>
+      </header>
 
-      <h2>💻 VJP materials</h2>
-      <ul>
-        <li>
-          <a
-            href="/vjp-sanakirja/index.html"
-            target="_blank"
-            >📖 VJP-sanakirja</a
-          >
-        </li>
-        <li>
-          <a
-            href="/loremipsum/index.html"
-            target="_blank"
-            >📖 Lorem ipsum esimerkit</a
-          >
-        </li>
-        <li>
-          <a
-            href="/js2/index.html"
-            target="_blank"
-            >📖 JavaScript esimerkit</a
-          >
-        </li>
-        <li>
-          <a
-            href="/inspector-lupaus/index.html"
-            target="_blank"
-            >🤪 Inspector lupaus</a
-          >
-        </li>
-        <li>
-          <a
-            href="/promises/index.html"
-            target="_blank"
-            >⌛️ Promiset</a
-          >
-        </li>
-        
-      </ul>
+      <main class="grid-layout">
+        <section class="card">
+          <div class="card-header">
+            <h2>💻 VJP Materials</h2>
+            <p class="card-meta">Course guides & examples</p>
+          </div>
+          <ul class="card-links">
+            <li><a href="/vjp-sanakirja/index.html" target="_blank">📖 VJP-sanakirja</a></li>
+            <li><a href="/loremipsum/index.html" target="_blank">📖 Lorem ipsum esimerkit</a></li>
+            <li><a href="/js2/index.html" target="_blank">📖 JavaScript esimerkit</a></li>
+            <li><a href="/inspector-lupaus/index.html" target="_blank">🤪 Inspector lupaus</a></li>
+            <li><a href="/promises/index.html" target="_blank">⌛️ Promiset</a></li>
+          </ul>
+        </section>
 
-      <h2>📝 Exercises</h2>
-      <ul>
-        <li>
-          <a href="https://flukeout.github.io/" target="_blank">👨‍💻 CSS Diner</a>
-        </li>
-        <li>
-          <a href="https://flexboxfroggy.com/" target="_blank"
-            >👨‍💻 Flexbox Froggy</a
-          >
-        </li>
-        <li>
-          <a href="https://cssgridgarden.com/" target="_blank"
-            >👨‍💻 Grid Garden</a
-          >
-        </li>
-        <li>
-          <a href="https://learngitbranching.js.org/" target="_blank"
-            >👨‍💻 Learn Git Branching</a
-          >
-        </li>
-      </ul>
+        <section class="card">
+          <div class="card-header">
+            <h2>📝 Exercises</h2>
+            <p class="card-meta">Interactive learning</p>
+          </div>
+          <ul class="card-links">
+            <li><a href="https://flukeout.github.io/" target="_blank">👨‍💻 CSS Diner</a></li>
+            <li><a href="https://flexboxfroggy.com/" target="_blank">👨‍💻 Flexbox Froggy</a></li>
+            <li><a href="https://cssgridgarden.com/" target="_blank">👨‍💻 Grid Garden</a></li>
+            <li><a href="https://learngitbranching.js.org/" target="_blank">👨‍💻 Learn Git Branching</a></li>
+          </ul>
+        </section>
 
-      <h2>📚 Resources</h2>
-      <ul>
-        <li>
-          <a
-            href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started"
-            target="_blank"
-            >📖 Basics of HTML</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_started"
-            target="_blank"
-            >📖 Basics of CSS</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript"
-            target="_blank"
-            >📖 Basics of JavaScript</a
-          >
-        </li>
-      </ul>
+        <section class="card">
+          <div class="card-header">
+            <h2>📚 Resources</h2>
+            <p class="card-meta">Essential documentation</p>
+          </div>
+          <ul class="card-links">
+            <li><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started" target="_blank">📖 Basics of HTML</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_started" target="_blank">📖 Basics of CSS</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript" target="_blank">📖 Basics of JavaScript</a></li>
+          </ul>
+        </section>
+      </main>
     </div>
     <footer>Live, laugh, inspect element ❤️</footer>
   </body>

@@ -1,62 +1,202 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  background: #333;
-  font-family: "Source Code Pro", monospace;
-  color: white;
+  background: #1a1a1a;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+  color: #f5f5f5;
+  line-height: 1.6;
 }
 
 #container {
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  padding: 0;
 }
 
-.description {
-  /* italic */
-  font-style: italic;
-  width: 40ch;
-  max-width: 90%;
+.hero {
+  width: 100%;
+  background: #0f0f0f;
+  padding: 5rem 2rem;
   text-align: center;
-  margin-bottom: 2rem;
-}
-
-ul {
-  width: 20rem;
-}
-
-li a {
-  list-style: none;
-  margin: 0;
-
-  padding: 0.5rem 1rem;
-  color: white;
-  text-decoration: none;
-  background-color: #333;
-  transition: all 0.13s ease-in-out;
-}
-
-li a:hover {
-  color: #f1f1f1;
-  background-color: orange;
-}
-
-li {
-  list-style-type: none;
-  margin-bottom: 1.5rem;
-}
-
-footer {
-  margin-top: 10rem;
-  margin-bottom: 10rem;
-  text-align: center;
-  color: orange;
+  border-bottom: 3px solid #3b82f6;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  border-radius: 0px;
 }
 
 h1 {
-  padding-top: 3rem;
+  margin: 0 0 1rem 0;
+  font-size: 4rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  color: #f5f5f5;
+}
+
+.description {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #3b82f6;
+  max-width: 600px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto 4rem;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-top: 4px solid #3b82f6;
+  border-radius: 6px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(59, 130, 246, 0.15);
+  border-left: 1px solid #e5e7eb;
+}
+
+.card-header {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
   padding-bottom: 1rem;
-  border-bottom: 2px solid orange;
+}
+
+h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.card-meta {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #3b82f6;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.card-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.card-links li {
+  margin: 0;
+}
+
+.card-links a {
+  display: block;
+  padding: 0.85rem 1rem;
+  background: #f3f4f6;
+  color: #1a1a1a;
+  text-decoration: none;
+  border-radius: 6px;
+  border-left: 4px solid #3b82f6;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid #3b82f6;
+}
+
+.card-links a:hover {
+  background: #3b82f6;
+  color: #ffffff;
+  transform: translateX(4px);
+  border-left: 4px solid #1e40af;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+footer {
+  width: 100%;
+  margin-top: auto;
+  padding: 3rem 2rem;
+  text-align: center;
+  color: #3b82f6;
+  border-top: 3px solid #3b82f6;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: #0f0f0f;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 0px;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.8rem;
+  }
+  
+  .grid-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+  
+  .hero {
+    padding: 3rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+  }
+  
+  h2 {
+    font-size: 1.3rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+  
+  .grid-layout {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero {
+    padding: 2rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  footer {
+    padding: 2rem 1rem;
+    font-size: 0.85rem;
+  }
 }
