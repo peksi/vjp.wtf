@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="/js2/styles/scrollDots.css" />
         <link rel="stylesheet" href="/js2/styles/darkMode.css" />
         <link rel="stylesheet" href="/js2/styles/tellTime.css" />
+        <link rel="stylesheet" href="/js2/styles/carousel.css" />
 
         <title>JS Ominaisuuksia omille verkkosivuille</title>
     </head>
@@ -79,6 +80,11 @@
                         <li class="nav-item">
                             <a href="#mouse-tracking" class="nav-link"
                                 >9. Hiirtä seuraava elementti</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a href="#carousel" class="nav-link"
+                                >10. Kuvakaruselli</a
                             >
                         </li>
                     </ul>
@@ -728,6 +734,96 @@
                     </div>
                 </div>
             </section>
+
+            <!--KUVAKARUSELLI-->
+            <section id="carousel">
+                <div class="section-header">
+                    <h3 class="section-heading">10. Kuvakaruselli</h3>
+                    <h3 class="points">14p</h3>
+                </div>
+                <div class="instructions-container">
+                    <div>
+                        <p>
+                            Karuselli on yleinen UI-komponentti, jolla voidaan
+                            esitellä kuvia tai muuta sisältöä kompaktissa
+                            tilassa. Käyttäjä voi selata sisältöä nuolilla tai
+                            antaa karusellin pyöriä automaattisesti.
+                        </p>
+                        <h4>Vaatimukset</h4>
+                        <ul>
+                            <li>
+                                Luo karuselli, jossa on vähintään 3 slidea
+                            </li>
+                            <li>
+                                Edellinen/Seuraava -nuolinappulat slidejen
+                                vaihtamiseen
+                            </li>
+                            <li>
+                                Indikaattoripisteet, joista näkee aktiivisen
+                                sliden
+                            </li>
+                            <li>
+                                Indikaattoripistettä klikatessa siirrytään
+                                kyseiseen slideen
+                            </li>
+                            <li>
+                                Autoplay-toiminto: slidet vaihtuvat
+                                automaattisesti x sekunnin välein
+                            </li>
+                            <li>
+                                Autoplay pysähtyy, kun käyttäjä klikkaa nuolta
+                                tai pistettä
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="files-container">
+                        <h5>Toteutuksen tiedostot</h5>
+                        <ul class="files">
+                            <li class="file">index.html</li>
+                            <li class="file">carousel.js</li>
+                            <li class="file">carousel.css</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="example-container">
+                    <div class="carousel">
+                        <div class="carousel-track">
+                            <!-- Lisää joka slidelle oma sisältösi. -->
+                            <div
+                                class="carousel-slide"
+                                style="background-color: #e91e63"
+                            >
+                                Slide 1
+                            </div>
+                            <div
+                                class="carousel-slide"
+                                style="background-color: #9c27b0"
+                            >
+                                Slide 2
+                            </div>
+                            <div
+                                class="carousel-slide"
+                                style="background-color: #3f51b5"
+                            >
+                                Slide 3
+                            </div>
+                            <div
+                                class="carousel-slide"
+                                style="background-color: #009688"
+                            >
+                                Slide 4
+                            </div>
+                        </div>
+                        <button class="carousel-arrow carousel-arrow--prev">
+                            &#10094;
+                        </button>
+                        <button class="carousel-arrow carousel-arrow--next">
+                            &#10095;
+                        </button>
+                        <div class="carousel-dots"></div>
+                    </div>
+                </div>
+            </section>
         </main>
         <script defer src="/js2/scripts/mobileMenu.js"></script>
         <script defer src="/js2/scripts/modal.js"></script>
@@ -738,5 +834,6 @@
         <script defer src="/js2/scripts/darkMode.js"></script>
         <script defer src="/js2/scripts/tellTime.js"></script>
         <script defer src="/js2/scripts/fullScreen.js"></script>
+        <script defer src="/js2/scripts/carousel.js"></script>
     </body>
 </html>
