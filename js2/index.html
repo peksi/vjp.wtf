@@ -20,6 +20,7 @@
         <link rel="stylesheet" href="/js2/styles/darkMode.css" />
         <link rel="stylesheet" href="/js2/styles/tellTime.css" />
         <link rel="stylesheet" href="/js2/styles/carousel.css" />
+        <link rel="stylesheet" href="/js2/styles/cardTilt.css" />
 
         <title>JS Ominaisuuksia omille verkkosivuille</title>
     </head>
@@ -85,6 +86,11 @@
                         <li class="nav-item">
                             <a href="#carousel" class="nav-link"
                                 >10. Kuvakaruselli</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a href="#card-tilt" class="nav-link"
+                                >11. 3D-korttihover</a
                             >
                         </li>
                     </ul>
@@ -824,6 +830,72 @@
                     </div>
                 </div>
             </section>
+
+            <!--3D-KORTTIHOVER-->
+            <section id="card-tilt">
+                <div class="section-header">
+                    <h3 class="section-heading">11. 3D-korttihover</h3>
+                    <h3 class="points">TBA</h3>
+                </div>
+                <div class="instructions-container">
+                    <div>
+                        <p>
+                            Korttielementeille voi lisätä hiiren liikkeeseen
+                            reagoivan 3D-kallistusefektin. Hiiren sijainti
+                            kortin päällä määrittää kallistuksen suunnan ja
+                            kulman CSS:n
+                            <em>perspective</em>, <em>rotateX</em> ja
+                            <em>rotateY</em> -funktioilla.
+                        </p>
+                        <h4>Vaatimukset</h4>
+                        <ul>
+                            <li>Vähintään 3 korttielementtiä. Yhdistä vaikka elementtien filtteröintiin!</li>
+                            <li>
+                                Hiiren liikkuessa kortin päällä kortti
+                                kallistuu hiiren suuntaan
+                                (<em>mousemove</em>-kuuntelija)
+                            </li>
+                            <li>
+                                Kallistus lasketaan hiiren sijainnista suhteessa
+                                kortin keskipisteeseen
+                            </li>
+                            <li>
+                                Käytä CSS:n <em>transform: perspective()
+                                rotateX() rotateY()</em> -funktioita
+                            </li>
+                            <li>
+                                Hiiren poistuessa kortti palautuu
+                                alkuasentoonsa (<em>mouseleave</em>)
+                            </li>
+                            <li>
+                                Transitio palauttamiselle, jotta liike on
+                                pehmeä
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="files-container">
+                        <h5>Toteutuksen tiedostot</h5>
+                        <ul class="files">
+                            <li class="file">index.html</li>
+                            <li class="file">cardTilt.js</li>
+                            <li class="file">cardTilt.css</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="example-container">
+                    <div class="tilt-cards">
+                        <div class="tilt-card">
+                            Tein aluksi vähän figmaa
+                        </div>
+                        <div class="tilt-card">
+                            Sit näppäilin HTMLää ja CSSää
+                        </div>
+                        <div class="tilt-card">
+                            Alan olla jo ihan kova Javascriptissä
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
         <script defer src="/js2/scripts/mobileMenu.js"></script>
         <script defer src="/js2/scripts/modal.js"></script>
@@ -835,5 +907,6 @@
         <script defer src="/js2/scripts/tellTime.js"></script>
         <script defer src="/js2/scripts/fullScreen.js"></script>
         <script defer src="/js2/scripts/carousel.js"></script>
+        <script defer src="/js2/scripts/cardTilt.js"></script>
     </body>
 </html>

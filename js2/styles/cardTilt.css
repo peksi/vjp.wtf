@@ -1,0 +1,52 @@
+.tilt-cards {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  perspective: 800px;
+}
+
+.tilt-card {
+  width: 220px;
+  height: 280px;
+  border-radius: 8px;
+  background: hotpink;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  font-family: "Source Code Pro", monospace;
+}
+
+.tilt-card:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+.tilt-card {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 1rem;
+}
+
+@media (max-width: 600px) {
+  .tilt-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tilt-card {
+    width: 100%;
+    max-width: 280px;
+    height: 240px;
+  }
+}
