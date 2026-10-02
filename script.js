@@ -1,114 +1,80 @@
-// Filter + keyboard selection for the link console. The links work without this script;
-// it only reveals the search prompt and section menu, and wires the window buttons.
-
-const search = document.getElementById('search');
-const rows = [...document.querySelectorAll('.row')];
-const groups = [...document.querySelectorAll('.group')];
-const menu = document.getElementById('menu');
-const count = document.getElementById('count');
-const empty = document.getElementById('empty');
+// Window buttons: minimize and close hide the window; the desktop icon brings it back.
 const win = document.getElementById('window');
 const openIcon = document.getElementById('open');
 
-const labels = rows.map((row) => row.querySelector('.label').textContent);
-let section = '';
-let visible = rows;
-let selected = 0;
-
-document.getElementById('prompt').hidden = false;
-menu.hidden = false;
-
-function highlight(label, term) {
-  const el = document.createDocumentFragment();
-  const i = term ? label.toLowerCase().indexOf(term) : -1;
-  if (i < 0) return document.createTextNode(label);
-  const mark = document.createElement('mark');
-  mark.textContent = label.slice(i, i + term.length);
-  el.append(label.slice(0, i), mark, label.slice(i + term.length));
-  return el;
-}
-
-function update() {
-  const term = search.value.trim().toLowerCase();
-  visible = [];
-  rows.forEach((row, i) => {
-    const group = row.closest('.group');
-    const haystack = (labels[i] + ' ' + row.querySelector('.dest').textContent + ' ' + group.querySelector('h2').textContent).toLowerCase();
-    const show = (!section || group.dataset.section === section) && (!term || haystack.includes(term));
-    row.parentElement.hidden = !show;
-    row.querySelector('.label').replaceChildren(highlight(labels[i], show ? term : ''));
-    if (show) visible.push(row);
-  });
-  groups.forEach((group) => {
-    group.hidden = !group.querySelector('li:not([hidden])');
-  });
-  empty.hidden = visible.length > 0;
-  document.getElementById('empty-query').textContent = search.value;
-  count.textContent = visible.length + ' kohdetta';
-  select(0);
-}
-
-function select(i) {
-  rows.forEach((row) => row.classList.remove('selected'));
-  if (!visible.length) return;
-  selected = (i + visible.length) % visible.length;
-  visible[selected].classList.add('selected');
-}
-
-function scrollToSelected() {
-  visible[selected]?.scrollIntoView({ block: 'nearest' });
-}
-
-search.addEventListener('input', update);
-
-document.getElementById('results').addEventListener('pointermove', (e) => {
-  const row = e.target.closest('.row');
-  if (row && row !== visible[selected]) select(visible.indexOf(row));
-});
-
-document.addEventListener('keydown', (e) => {
-  if (e.metaKey || e.ctrlKey || e.altKey || win.hidden) return;
-  const inSearch = e.target === search;
-  // Arrows only drive the list from the search field or the page itself, so they still scroll elsewhere.
-  const listFocus = inSearch || e.target === document.body;
-  if (listFocus && e.key === 'ArrowDown') { e.preventDefault(); select(selected + 1); scrollToSelected(); }
-  else if (listFocus && e.key === 'ArrowUp') { e.preventDefault(); select(selected - 1); scrollToSelected(); }
-  else if (listFocus && e.key === 'Enter' && visible.length) { e.preventDefault(); visible[selected].click(); }
-  else if (e.key === 'Escape') { search.value = ''; update(); search.blur(); }
-  else if (e.key === '/' && !inSearch) { e.preventDefault(); search.focus(); }
-});
-
-menu.addEventListener('click', (e) => {
-  const button = e.target.closest('button');
-  if (!button) return;
-  menu.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', b === button));
-  section = button.dataset.section;
-  update();
-});
-
-// Window buttons; the desktop icon reopens.
-document.getElementById('minimize').addEventListener('click', () => {
+function hide() {
   win.hidden = true;
   openIcon.focus();
-});
+}
 
-document.getElementById('close').addEventListener('click', () => {
-  win.hidden = true;
-  win.classList.remove('maximized');
-  search.value = '';
-  update();
-  openIcon.focus();
-});
-
-document.getElementById('maximize').addEventListener('click', (e) => {
-  const on = win.classList.toggle('maximized');
-  e.currentTarget.setAttribute('aria-label', on ? 'Palauta' : 'Suurenna');
-  e.currentTarget.textContent = on ? '❐' : '□';
-});
+document.getElementById('minimize').addEventListener('click', hide);
+document.getElementById('close').addEventListener('click', hide);
 
 openIcon.addEventListener('click', () => {
   win.hidden = false;
-  search.focus();
+  win.querySelector('.row').focus();
 });
 
-update();
+// ↑/↓ move focus between the links (focus inverts the row); Enter opens a focused link natively.
+const rows = [...win.querySelectorAll('.row')];
+
+document.addEventListener('keydown', (e) => {
+  if (win.hidden || e.metaKey || e.ctrlKey || e.altKey) return;
+  if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+  // Leave arrows alone on other controls (title buttons, desktop icons) so they behave normally.
+  const current = rows.indexOf(document.activeElement);
+  if (current < 0 && document.activeElement !== document.body) return;
+  e.preventDefault();
+  const step = e.key === 'ArrowDown' ? 1 : -1;
+  const next = current < 0 ? (step > 0 ? 0 : rows.length - 1) : (current + step + rows.length) % rows.length;
+  rows[next].focus();
+});
+
+// Drag the window by its title bar, on big screens with a mouse. It moves with a transform
+// and stays fully inside the viewport, so dragging never adds scrollbars.
+const titleBar = win.querySelector('.title-bar');
+const canDrag = matchMedia('(pointer: fine) and (min-width: 641px)');
+let offsetX = 0;
+let offsetY = 0;
+
+function moveTo(x, y) {
+  if (win.hidden) return;
+  // Where the window sits in the layout, before any drag offset.
+  const rect = win.getBoundingClientRect();
+  const left = rect.left - offsetX;
+  const top = rect.top - offsetY;
+  offsetX = Math.min(Math.max(x, -left), Math.max(-left, innerWidth - rect.width - left));
+  offsetY = Math.min(Math.max(y, -top), Math.max(-top, innerHeight - rect.height - top));
+  win.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+}
+
+titleBar.addEventListener('pointerdown', (e) => {
+  if (!canDrag.matches || e.button !== 0 || e.target.closest('button')) return;
+  const startX = e.clientX - offsetX;
+  const startY = e.clientY - offsetY;
+  titleBar.setPointerCapture(e.pointerId);
+  win.classList.add('dragging');
+
+  const onMove = (move) => moveTo(move.clientX - startX, move.clientY - startY);
+  const onUp = () => {
+    win.classList.remove('dragging');
+    titleBar.removeEventListener('pointermove', onMove);
+    titleBar.removeEventListener('pointerup', onUp);
+    titleBar.removeEventListener('pointercancel', onUp);
+  };
+  titleBar.addEventListener('pointermove', onMove);
+  titleBar.addEventListener('pointerup', onUp);
+  titleBar.addEventListener('pointercancel', onUp);
+});
+
+// Keep a moved window on screen when the browser is resized; drop the offset when the
+// layout switches to the small-screen one, where the window can't be dragged.
+addEventListener('resize', () => {
+  if (canDrag.matches && (offsetX || offsetY)) moveTo(offsetX, offsetY);
+});
+
+canDrag.addEventListener('change', () => {
+  if (canDrag.matches) return;
+  offsetX = offsetY = 0;
+  win.style.transform = '';
+});

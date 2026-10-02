@@ -16,66 +16,52 @@
 
     <main class="window" id="window" aria-labelledby="window-title">
       <div class="title-bar">
-        <h1 id="window-title">👑 VJP.WTF — opiskelija@aalto: ~/cs-c1180</h1>
+        <span class="title-icon" aria-hidden="true">👑</span>
+        <h1 id="window-title">VJP.WTF</h1>
         <button class="title-button" id="minimize" aria-label="Pienennä">_</button>
-        <button class="title-button" id="maximize" aria-label="Suurenna">□</button>
+        <button class="title-button" aria-label="Suurenna" disabled>□</button>
         <button class="title-button" id="close" aria-label="Sulje">×</button>
       </div>
 
-      <nav class="menu" id="menu" aria-label="Osiot" hidden>
-        <button data-section="" aria-pressed="true">Kaikki</button>
-        <button data-section="materiaalit" aria-pressed="false">Materiaalit</button>
-        <button data-section="harjoitusta" aria-pressed="false">Harjoitukset</button>
-        <button data-section="lisaresursseja" aria-pressed="false">Lisäresursseja</button>
-      </nav>
+      <div class="content">
+        <header class="intro">
+          <p class="lead">Epäviralliset kurssimateriaalit</p>
+          <p class="course">CS-C1180 · Aalto-yliopisto</p>
+        </header>
 
-      <div class="console">
-        <p class="console-line"><span class="prompt-text">C:\VJP&gt;</span> type README.TXT</p>
-        <p class="console-out">Epäviralliset kurssimateriaalit — CS-C1180 · Aalto-yliopisto</p>
+        <section class="group" aria-labelledby="materiaalit">
+          <h2 id="materiaalit"><span class="number">01</span> MATERIAALIT</h2>
+          <ul>
+            <li><a class="row" href="/vjp-sanakirja/index.html" target="_blank" rel="noopener"><span>VJP-sanakirja</span><span class="dest">vjp.wtf/vjp-sanakirja</span></a></li>
+            <li><a class="row" href="/loremipsum/index.html" target="_blank" rel="noopener"><span>Lorem ipsum esimerkit</span><span class="dest">vjp.wtf/loremipsum</span></a></li>
+            <li><a class="row" href="/js2/index.html" target="_blank" rel="noopener"><span>JavaScript esimerkit</span><span class="dest">vjp.wtf/js2</span></a></li>
+            <li><a class="row" href="/inspector-lupaus/index.html" target="_blank" rel="noopener"><span>Inspector lupaus</span><span class="dest">vjp.wtf/inspector-lupaus</span></a></li>
+            <li><a class="row" href="/promises/index.html" target="_blank" rel="noopener"><span>Promiset</span><span class="dest">vjp.wtf/promises</span></a></li>
+          </ul>
+        </section>
 
-        <div class="prompt" id="prompt" hidden>
-          <label for="search" class="prompt-text">C:\VJP&gt; grep</label>
-          <input id="search" type="search" autocomplete="off" spellcheck="false" placeholder="hae materiaaleista…" aria-controls="results" />
-        </div>
+        <section class="group" aria-labelledby="harjoitukset">
+          <h2 id="harjoitukset"><span class="number">02</span> HARJOITUKSET</h2>
+          <ul>
+            <li><a class="row" href="https://flukeout.github.io/" target="_blank" rel="noopener"><span>CSS Diner</span><span class="dest">flukeout.github.io</span></a></li>
+            <li><a class="row" href="https://flexboxfroggy.com/" target="_blank" rel="noopener"><span>Flexbox Froggy</span><span class="dest">flexboxfroggy.com</span></a></li>
+            <li><a class="row" href="https://cssgridgarden.com/" target="_blank" rel="noopener"><span>Grid Garden</span><span class="dest">cssgridgarden.com</span></a></li>
+            <li><a class="row" href="https://learngitbranching.js.org/" target="_blank" rel="noopener"><span>Learn Git Branching</span><span class="dest">learngitbranching.js.org</span></a></li>
+          </ul>
+        </section>
 
-        <div id="results">
-          <section class="group" data-section="materiaalit">
-            <h2><span>01</span> MATERIAALIT</h2>
-            <ul>
-              <li><a class="row" href="/vjp-sanakirja/index.html" target="_blank" rel="noopener"><span class="caret" aria-hidden="true">►</span><span aria-hidden="true">📖</span><span class="label">VJP-sanakirja</span><span class="dest">vjp.wtf/vjp-sanakirja</span></a></li>
-              <li><a class="row" href="/loremipsum/index.html" target="_blank" rel="noopener"><span class="caret" aria-hidden="true">►</span><span aria-hidden="true">📖</span><span class="label">Lorem ipsum esimerkit</span><span class="dest">vjp.wtf/loremipsum</span></a></li>
-              <li><a class="row" href="/js2/index.html" target="_blank" rel="noopener"><span class="caret" aria-hidden="true">►</span><span aria-hidden="true">📖</span><span class="label">JavaScript esimerkit</span><span class="dest">vjp.wtf/js2</span></a></li>
-              <li><a class="row" href="/inspector-lupaus/index.html" target="_blank" rel="noopener"><span class="caret" aria-hidden="true">►</span><span aria-hidden="true">🤪</span><span class="label">Inspector lupaus</span><span class="dest">vjp.wtf/inspector-lupaus</span></a></li>
-              <li><a class="row" href="/promises/index.html" target="_blank" rel="noopener"><span class="caret" aria-hidden="true">►</span><span aria-hidden="true">⌛</span><span class="label">Promiset</span><span class="dest">vjp.wtf/promises</span></a></li>
-            </ul>
-          </section>
-
-          <section class="group" data-section="harjoitusta">
-            <h2><span>02</span> HARJOITUKSET</h2>
-            <ul>
-              <li><a class="row" href="https://flukeout.github.io/" target="_blank" rel="noopener"><span class="caret" aria-hidden="true">►</span><span aria-hidden="true">👨‍💻</span><span class="label">CSS Diner</span><span class="dest">flukeout.github.io</span></a></li>
-              <li><a class="row" href="https://flexboxfroggy.com/" target="_blank" rel="noopener"><span class="caret" aria-hidden="true">►</span><span aria-hidden="true">👨‍💻</span><span class="label">Flexbox Froggy</span><span class="dest">flexboxfroggy.com</span></a></li>
-              <li><a class="row" href="https://cssgridgarden.com/" target="_blank" rel="noopener"><span class="caret" aria-hidden="true">►</span><span aria-hidden="true">👨‍💻</span><span class="label">Grid Garden</span><span class="dest">cssgridgarden.com</span></a></li>
-              <li><a class="row" href="https://learngitbranching.js.org/" target="_blank" rel="noopener"><span class="caret" aria-hidden="true">►</span><span aria-hidden="true">👨‍💻</span><span class="label">Learn Git Branching</span><span class="dest">learngitbranching.js.org</span></a></li>
-            </ul>
-          </section>
-
-          <section class="group" data-section="lisaresursseja">
-            <h2><span>03</span> LISÄRESURSSEJA</h2>
-            <ul>
-              <li><a class="row" href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started" target="_blank" rel="noopener"><span class="caret" aria-hidden="true">►</span><span aria-hidden="true">📖</span><span class="label">Basics of HTML</span><span class="dest">developer.mozilla.org</span></a></li>
-              <li><a class="row" href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_started" target="_blank" rel="noopener"><span class="caret" aria-hidden="true">►</span><span aria-hidden="true">📖</span><span class="label">Basics of CSS</span><span class="dest">developer.mozilla.org</span></a></li>
-              <li><a class="row" href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript" target="_blank" rel="noopener"><span class="caret" aria-hidden="true">►</span><span aria-hidden="true">📖</span><span class="label">Basics of JavaScript</span><span class="dest">developer.mozilla.org</span></a></li>
-            </ul>
-          </section>
-
-          <p class="empty" id="empty" hidden>Tiedostoa ei löydy: <span id="empty-query"></span><br />Paina Esc tyhjentääksesi.</p>
-        </div>
+        <section class="group" aria-labelledby="lisaresursseja">
+          <h2 id="lisaresursseja"><span class="number">03</span> LISÄRESURSSEJA</h2>
+          <ul>
+            <li><a class="row" href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started" target="_blank" rel="noopener"><span>Basics of HTML</span><span class="dest">developer.mozilla.org</span></a></li>
+            <li><a class="row" href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_started" target="_blank" rel="noopener"><span>Basics of CSS</span><span class="dest">developer.mozilla.org</span></a></li>
+            <li><a class="row" href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript" target="_blank" rel="noopener"><span>Basics of JavaScript</span><span class="dest">developer.mozilla.org</span></a></li>
+          </ul>
+        </section>
       </div>
 
       <footer class="status-bar">
-        <span id="count" aria-live="polite">12 kohdetta</span>
-        <span class="status-keys">↑↓ valitse · ⏎ avaa · / hae · Esc tyhjennä</span>
+        <span class="keys" aria-hidden="true">↑↓ valitse · ⏎ avaa</span>
         <span>Live, laugh, inspect element ❤️</span>
       </footer>
     </main>

@@ -22,6 +22,8 @@
   --muted: #6f8f88;
   --raised: inset -1px -1px var(--dark), inset 1px 1px var(--highlight), inset -2px -2px var(--shadow), inset 2px 2px var(--face-light);
   --sunken: inset 1px 1px var(--shadow), inset -1px -1px var(--highlight), inset 2px 2px var(--dark), inset -2px -2px var(--face-light);
+  /* One line of Fixedsys (16px × 1.5). All vertical spacing is a multiple of it. */
+  --line: 24px;
 }
 
 *, *::before, *::after {
@@ -30,22 +32,23 @@
   padding: 0;
 }
 
-/* Fixedsys is drawn on a 16px grid; every size stays at 16px so it renders crisp. */
+/* Fixedsys is drawn on a 16px grid; every size stays at 16px so it renders crisp.
+   Hierarchy comes from colour and case instead of size. */
 body {
   background: var(--desk);
   color: var(--dark);
   font-family: 'Fixedsys Excelsior', 'Courier New', monospace;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: var(--line);
   -webkit-font-smoothing: none;
   min-height: 100vh;
-  padding: 1rem 1rem 3rem;
+  padding: var(--line);
   display: grid;
   grid-template-columns: 88px minmax(0, 1fr);
-  gap: 1rem;
+  gap: var(--line);
 }
 
-button, input {
+button {
   font: inherit;
 }
 
@@ -53,16 +56,16 @@ button, input {
 .icons {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: calc(var(--line) / 2);
 }
 
 .icon {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.25rem;
+  gap: 4px;
   width: 88px;
-  padding: 0.4rem 0.2rem;
+  padding: 6px 4px;
   background: none;
   border: 1px dotted transparent;
   color: #fff;
@@ -72,12 +75,12 @@ button, input {
 }
 
 .icon-glyph {
-  font-size: 2rem;
+  font-size: 32px;
   line-height: 1;
 }
 
 .icon-label {
-  padding: 0 0.2rem;
+  padding: 0 4px;
 }
 
 .icon:focus-visible {
@@ -92,7 +95,7 @@ button, input {
 
 /* Window */
 .window {
-  max-width: 780px;
+  max-width: 600px;
   width: 100%;
   justify-self: center;
   align-self: start;
@@ -105,17 +108,26 @@ button, input {
   display: none;
 }
 
-.window.maximized {
-  max-width: none;
-}
-
 .title-bar {
   display: flex;
   align-items: center;
   gap: 2px;
   background: var(--title);
   color: var(--title-text);
-  padding: 3px 3px 3px 6px;
+  padding: 3px 3px 3px 4px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Dragged by its title bar (script.js). No transition: it follows the pointer 1:1. */
+.window.dragging {
+  will-change: transform;
+}
+
+.title-icon {
+  width: 20px;
+  text-align: center;
+  margin-right: 4px;
 }
 
 .title-bar h1 {
@@ -123,9 +135,6 @@ button, input {
   min-width: 0;
   font-size: inherit;
   font-weight: inherit;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .title-button {
@@ -145,9 +154,16 @@ button, input {
   margin-left: 2px;
 }
 
-.title-button:active {
+.title-button:active:not(:disabled) {
   box-shadow: var(--sunken);
   padding: 2px 0 0 2px;
+}
+
+/* Greyed, embossed glyph: the Windows look for an unavailable control. */
+.title-button:disabled {
+  color: var(--shadow);
+  text-shadow: 1px 1px var(--highlight);
+  cursor: default;
 }
 
 .title-button:focus-visible {
@@ -155,143 +171,50 @@ button, input {
   outline-offset: -5px;
 }
 
-/* Menu bar: filters by section */
-.menu {
-  display: flex;
-  gap: 0.25rem;
-  padding: 0.25rem;
-}
-
-.menu[hidden] {
-  display: none;
-}
-
-.menu button {
-  background: none;
-  border: 0;
-  color: var(--dark);
-  padding: 0 0.5rem;
-  white-space: nowrap;
-  cursor: pointer;
-}
-
-.menu button:hover,
-.menu button:focus-visible {
-  background: var(--title);
-  color: var(--title-text);
-  outline: none;
-}
-
-.menu button[aria-pressed="true"] {
-  background: var(--face-light);
-  color: var(--dark);
-  box-shadow: var(--sunken);
-}
-
-/* Console */
-.console {
+/* Content */
+.content {
   background: var(--console);
   color: var(--console-text);
   box-shadow: var(--sunken);
-  padding: 1rem 1.1rem 0.75rem;
-  min-height: 320px;
-}
-
-.prompt-text {
-  color: var(--teal);
-}
-
-.console-out {
-  margin-bottom: 1.5rem;
-}
-
-.prompt {
+  margin-top: 3px;
+  padding: var(--line) calc(var(--line) - 4px);
   display: flex;
-  align-items: center;
-  gap: 1ch;
-  margin-bottom: 1.5rem;
+  flex-direction: column;
+  gap: var(--line);
 }
 
-.prompt[hidden] {
-  display: none;
+.lead {
+  color: var(--title-text);
 }
 
-.prompt label {
-  white-space: nowrap;
-}
-
-.prompt input {
-  flex: 1;
-  min-width: 0;
-  background: transparent;
-  border: 0;
-  border-bottom: 1px dashed #2a4a44;
-  border-radius: 0;
-  outline: 0;
-  color: #fff;
-  caret-color: var(--teal);
-  -webkit-appearance: none;
-  appearance: none;
-}
-
-.prompt input::-webkit-search-cancel-button {
-  display: none;
-}
-
-.prompt input:focus {
-  border-bottom-color: var(--teal);
-}
-
-.prompt input::placeholder {
+.course {
   color: var(--muted);
-  opacity: 1;
-}
-
-.group {
-  margin-bottom: 1.5rem;
-}
-
-.group[hidden] {
-  display: none;
 }
 
 .group h2 {
   font-size: inherit;
   font-weight: inherit;
-  color: var(--muted);
+  color: var(--teal);
 }
 
-.group h2 span {
-  color: var(--teal);
+.group h2 .number {
+  color: var(--muted);
 }
 
 .group ul {
   list-style: none;
 }
 
-.group li[hidden] {
-  display: none;
-}
-
+/* Name on the left, where it goes on the right.
+   A row inverts like a selected list item on hover and on keyboard focus. */
 .row {
-  display: grid;
-  grid-template-columns: 1ch 1.25em minmax(0, 1fr) auto;
-  gap: 1ch;
-  align-items: center;
-  padding: 0 0.5ch;
-  margin: 0 -0.5ch;
+  display: flex;
+  justify-content: space-between;
+  gap: 2ch;
+  padding: 0 6px;
+  margin: 0 -6px;
   color: var(--console-text);
   text-decoration: none;
-}
-
-.row .caret {
-  visibility: hidden;
-}
-
-.row .label {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .row .dest {
@@ -299,38 +222,28 @@ button, input {
   white-space: nowrap;
 }
 
-.row mark {
-  background: none;
-  color: var(--teal);
-  text-decoration: underline;
-}
-
-.row.selected {
+.row:focus-visible,
+.row:active {
   background: var(--teal);
   color: var(--console);
+  outline: 1px dotted var(--title-text);
+  outline-offset: 0;
 }
 
-.row.selected .caret {
-  visibility: visible;
+@media (hover: hover) {
+  .row:hover {
+    background: var(--teal);
+    color: var(--console);
+  }
+
+  .row:hover .dest {
+    color: var(--console);
+  }
 }
 
-.row.selected .dest,
-.row.selected mark {
+.row:focus-visible .dest,
+.row:active .dest {
   color: var(--console);
-}
-
-.row:focus-visible {
-  outline: 1px dotted var(--teal);
-  outline-offset: 1px;
-}
-
-.empty {
-  color: var(--muted);
-  margin-bottom: 1.5rem;
-}
-
-.empty span {
-  color: #fff;
 }
 
 /* Status bar */
@@ -341,45 +254,42 @@ button, input {
 }
 
 .status-bar span {
+  flex: 1;
+  min-width: 0;
   box-shadow: var(--sunken);
-  padding: 0.15rem 0.5rem;
+  padding: 2px 8px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.status-bar .status-keys {
-  flex: 1;
+.status-bar .keys {
+  flex: none;
+}
+
+/* The key legend only means something with a keyboard, and needs room. */
+@media (hover: none), (max-width: 640px) {
+  .status-bar .keys {
+    display: none;
+  }
 }
 
 @media (max-width: 640px) {
   body {
     grid-template-columns: minmax(0, 1fr);
-    padding: 0.5rem 0.5rem 2rem;
+    padding: calc(var(--line) / 2);
+    gap: calc(var(--line) / 2);
   }
 
   .icons {
     flex-direction: row;
   }
 
-  .menu {
-    overflow-x: auto;
+  .content {
+    padding: calc(var(--line) / 2 + 4px) 12px;
   }
 
-  .console {
-    padding: 0.75rem;
-  }
-
-  .row {
-    grid-template-columns: 1ch 1.25em minmax(0, 1fr);
-  }
-
-  .row .dest,
-  .status-bar .status-keys {
+  .row .dest {
     display: none;
-  }
-
-  .status-bar span:last-child {
-    flex: 1;
   }
 }
