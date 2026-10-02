@@ -1,21 +1,320 @@
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
+/* VJP-sanakirja: minimal reading layout with a sticky Sisältö / Hakemisto sidebar. */
+
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --body: #2b2b2b;
+  --muted: #6b6b6b;
+  --line: #e6e6e6;
+  --line-strong: #cfcfcf;
+  --accent: #17665d;
+  --hit: #fdeaa0;
+  --target: #fff7d1;
 }
-thead, tbody {
-    width: 70vw;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-th, td {
-    border: 1px solid white;
-    padding: 15px;
+
+html {
+  scroll-padding-top: 1.5rem;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 0.15em;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+mark {
+  background: var(--hit);
+  color: inherit;
+  border-radius: 2px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* Sidebar */
+aside {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  border-right: 1px solid var(--line);
+  padding: 2rem 1.25rem 6rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.back {
+  font-size: 14px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.back:hover {
+  color: var(--accent);
+}
+
+.brand h1 {
+  font-size: 20px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  margin-top: 0.35rem;
+}
+
+.search {
+  width: 100%;
+  font-size: 16px;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  background: #fff;
+  transition: border-color 120ms ease-out, box-shadow 120ms ease-out;
+}
+
+.search:focus {
+  outline: 0;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(23, 102, 93, 0.15);
+}
+
+.search::placeholder {
+  color: #8a8a8a;
+}
+
+.tabs {
+  display: flex;
+  gap: 1.25rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.tab {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: none;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  padding: 0 0 0.45rem;
+  margin-bottom: -1px;
+  font-size: 15px;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 120ms ease-out, border-color 120ms ease-out;
+}
+
+.tab:hover {
+  color: var(--text);
+}
+
+/* Reserve the bold width so selecting a tab doesn't shift its neighbour. */
+.tab::after {
+  content: attr(data-label);
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  font-weight: 600;
+}
+
+.tab[aria-selected="true"] {
+  color: var(--text);
+  font-weight: 600;
+  border-bottom-color: var(--text);
+}
+
+.nav h2 {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 1.1rem 0 0.3rem;
+}
+
+.nav h2:first-child {
+  margin-top: 0.75rem;
+}
+
+.nav ul {
+  list-style: none;
+}
+
+.nav a {
+  display: block;
+  padding: 0.15rem 0 0.15rem 0.75rem;
+  margin-left: -0.75rem;
+  border-left: 2px solid transparent;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--body);
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: var(--accent);
+}
+
+.nav a[aria-current="true"] {
+  color: var(--text);
+  font-weight: 600;
+  border-left-color: var(--accent);
+}
+
+/* Sisältö: darker category headings, terms indented beneath them. */
+.nav-sisalto h2 {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.nav-sisalto a {
+  margin-left: 0;
+  padding-left: 1rem;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+/* Content */
+/* Room after the last term (Telemetria) so it can scroll up past the line where the sidebar
+   marks it as current (LINE = 96px in sanakirja.js), stopping just below the top edge. */
+main {
+  padding: 2.5rem 3rem calc(100vh - 10rem);
+}
+
+.intro {
+  max-width: 68ch;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.count {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+section {
+  max-width: 68ch;
+  margin-top: 2.75rem;
+}
+
+section > h2 {
+  font-size: 22px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 0.25rem;
+}
+
+.entry {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.entry:last-child {
+  border-bottom: 0;
+}
+
+dt {
+  font-weight: 600;
+}
+
+dd {
+  color: var(--body);
+  margin-top: 0.15rem;
+}
+
+.entry:target {
+  background: var(--target);
+  box-shadow: -0.75rem 0 0 var(--target), 0.75rem 0 0 var(--target);
+}
+
+.xref dd {
+  color: var(--muted);
+}
+
+.see {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 0.35rem;
+}
+
+.empty {
+  color: var(--muted);
+  padding: 1rem 0;
+}
+
+@media (max-width: 820px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  aside {
+    position: static;
+    height: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 1.25rem 1rem;
+  }
+
+  .nav-toggle {
+    display: block;
+    background: none;
+    border: 1px solid var(--line-strong);
+    border-radius: 6px;
+    padding: 0.4rem 0.75rem;
+    font-size: 15px;
     text-align: left;
+    cursor: pointer;
+  }
+
+  .nav-box[data-open="false"] {
+    display: none;
+  }
+
+  main {
+    padding: 1.5rem 1rem 6rem;
+  }
 }
-th {
-    font-weight: bold;
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
 }

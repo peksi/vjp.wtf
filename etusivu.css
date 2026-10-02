@@ -1,0 +1,385 @@
+/* Windows 98-ish window on a flat desktop. Depth from hard 1px bevels only:
+   no blur, no gradients, no glow. */
+
+@font-face {
+  font-family: 'Fixedsys Excelsior';
+  src: url('/fonts/fixedsys-excelsior.woff') format('woff');
+  font-display: swap;
+}
+
+:root {
+  --desk: #1f6b63;
+  --face: #d6d0bf;
+  --face-light: #e8e3d4;
+  --highlight: #fbf8ef;
+  --shadow: #8a8573;
+  --dark: #1a1a17;
+  --title: #0b3b36;
+  --title-text: #ece4cc;
+  --console: #050e0c;
+  --console-text: #c8c0a8;
+  --teal: #3db5a8;
+  --muted: #6f8f88;
+  --raised: inset -1px -1px var(--dark), inset 1px 1px var(--highlight), inset -2px -2px var(--shadow), inset 2px 2px var(--face-light);
+  --sunken: inset 1px 1px var(--shadow), inset -1px -1px var(--highlight), inset 2px 2px var(--dark), inset -2px -2px var(--face-light);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fixedsys is drawn on a 16px grid; every size stays at 16px so it renders crisp. */
+body {
+  background: var(--desk);
+  color: var(--dark);
+  font-family: 'Fixedsys Excelsior', 'Courier New', monospace;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: none;
+  min-height: 100vh;
+  padding: 1rem 1rem 3rem;
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr);
+  gap: 1rem;
+}
+
+button, input {
+  font: inherit;
+}
+
+/* Desktop icons */
+.icons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  width: 88px;
+  padding: 0.4rem 0.2rem;
+  background: none;
+  border: 1px dotted transparent;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.icon-glyph {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.icon-label {
+  padding: 0 0.2rem;
+}
+
+.icon:focus-visible {
+  outline: none;
+  border-color: #fff;
+}
+
+.icon:focus-visible .icon-label,
+.icon:active .icon-label {
+  background: var(--title);
+}
+
+/* Window */
+.window {
+  max-width: 780px;
+  width: 100%;
+  justify-self: center;
+  align-self: start;
+  background: var(--face);
+  box-shadow: var(--raised);
+  padding: 3px;
+}
+
+.window[hidden] {
+  display: none;
+}
+
+.window.maximized {
+  max-width: none;
+}
+
+.title-bar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: var(--title);
+  color: var(--title-text);
+  padding: 3px 3px 3px 6px;
+}
+
+.title-bar h1 {
+  flex: 1;
+  min-width: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.title-button {
+  width: 24px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  background: var(--face);
+  box-shadow: var(--raised);
+  border: 0;
+  line-height: 1;
+  color: var(--dark);
+  cursor: pointer;
+}
+
+.title-button:last-child {
+  margin-left: 2px;
+}
+
+.title-button:active {
+  box-shadow: var(--sunken);
+  padding: 2px 0 0 2px;
+}
+
+.title-button:focus-visible {
+  outline: 1px dotted var(--dark);
+  outline-offset: -5px;
+}
+
+/* Menu bar: filters by section */
+.menu {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.25rem;
+}
+
+.menu[hidden] {
+  display: none;
+}
+
+.menu button {
+  background: none;
+  border: 0;
+  color: var(--dark);
+  padding: 0 0.5rem;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.menu button:hover,
+.menu button:focus-visible {
+  background: var(--title);
+  color: var(--title-text);
+  outline: none;
+}
+
+.menu button[aria-pressed="true"] {
+  background: var(--face-light);
+  color: var(--dark);
+  box-shadow: var(--sunken);
+}
+
+/* Console */
+.console {
+  background: var(--console);
+  color: var(--console-text);
+  box-shadow: var(--sunken);
+  padding: 1rem 1.1rem 0.75rem;
+  min-height: 320px;
+}
+
+.prompt-text {
+  color: var(--teal);
+}
+
+.console-out {
+  margin-bottom: 1.5rem;
+}
+
+.prompt {
+  display: flex;
+  align-items: center;
+  gap: 1ch;
+  margin-bottom: 1.5rem;
+}
+
+.prompt[hidden] {
+  display: none;
+}
+
+.prompt label {
+  white-space: nowrap;
+}
+
+.prompt input {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px dashed #2a4a44;
+  border-radius: 0;
+  outline: 0;
+  color: #fff;
+  caret-color: var(--teal);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.prompt input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.prompt input:focus {
+  border-bottom-color: var(--teal);
+}
+
+.prompt input::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+
+.group {
+  margin-bottom: 1.5rem;
+}
+
+.group[hidden] {
+  display: none;
+}
+
+.group h2 {
+  font-size: inherit;
+  font-weight: inherit;
+  color: var(--muted);
+}
+
+.group h2 span {
+  color: var(--teal);
+}
+
+.group ul {
+  list-style: none;
+}
+
+.group li[hidden] {
+  display: none;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1ch 1.25em minmax(0, 1fr) auto;
+  gap: 1ch;
+  align-items: center;
+  padding: 0 0.5ch;
+  margin: 0 -0.5ch;
+  color: var(--console-text);
+  text-decoration: none;
+}
+
+.row .caret {
+  visibility: hidden;
+}
+
+.row .label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.row .dest {
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.row mark {
+  background: none;
+  color: var(--teal);
+  text-decoration: underline;
+}
+
+.row.selected {
+  background: var(--teal);
+  color: var(--console);
+}
+
+.row.selected .caret {
+  visibility: visible;
+}
+
+.row.selected .dest,
+.row.selected mark {
+  color: var(--console);
+}
+
+.row:focus-visible {
+  outline: 1px dotted var(--teal);
+  outline-offset: 1px;
+}
+
+.empty {
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.empty span {
+  color: #fff;
+}
+
+/* Status bar */
+.status-bar {
+  display: flex;
+  gap: 3px;
+  margin-top: 3px;
+}
+
+.status-bar span {
+  box-shadow: var(--sunken);
+  padding: 0.15rem 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.status-bar .status-keys {
+  flex: 1;
+}
+
+@media (max-width: 640px) {
+  body {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 0.5rem 0.5rem 2rem;
+  }
+
+  .icons {
+    flex-direction: row;
+  }
+
+  .menu {
+    overflow-x: auto;
+  }
+
+  .console {
+    padding: 0.75rem;
+  }
+
+  .row {
+    grid-template-columns: 1ch 1.25em minmax(0, 1fr);
+  }
+
+  .row .dest,
+  .status-bar .status-keys {
+    display: none;
+  }
+
+  .status-bar span:last-child {
+    flex: 1;
+  }
+}

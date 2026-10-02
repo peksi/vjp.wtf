@@ -1,158 +1,346 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fi">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!-- css -->
-        <link rel="stylesheet" href="/styles.css" />
-        <link rel="stylesheet" href="/vjp-sanakirja/sanakirja.css" />
-        <link rel="stylesheet" href="/loremipsum/loremstyle.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital@0;1&display=swap"
-            rel="stylesheet"
-        />
-        <title>😈VJP Sanakirja😈</title>
-    </head>
-    <body>
-        <div class="container">
-            <h1>😈VJP Sanakirja😈</h1>
-            <p>Tämä sanakirja avaa kurssilla käytettävää slangia selkokieleksi.</p>
-            <section class="table">
-                <h2>Design</h2>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>wireframe</td>
-                            <td>rautalanka/luonnos/suunnitelma. Miltä ohjelma tai design tulee pääpiirteittään näyttämään ilman visuaalisia yksityiskohtia. Esim. Mitä erilaisia komponentteja on ja mihin ne asetetaan?</td>
-                        </tr>
-                        <tr>
-                            <td>UX</td>
-                            <td>User eXperience; käyttäjäkokemus. Käyttäjän kokonaisvaltaiset mietteet, ajatukset ja tunteet tuotteesta tuotteen käyttämisen aikana ja sen jälkeen</td>
-                        </tr>
-                        <tr>
-                            <td>UI</td>
-                            <td>User Interface; käyttöliittymä. Rakennettu kommunikointiväline ihmisen ja koneen välillä (VJP-kontekstissa ainakin, onhan toki esim. automaattiolypsykoneiden suunnittelussa mietitty käyttöliittymää, jotta lehmät ois mahis tyytyväisiä :D) Voi olla graafinen (esim. Figma (eli suunnittelet käyttöliittymällä käyttöliittymiä :D)) tai tekstipohjainen (esim. komentopaneeli)</td>
-                        </tr>
-                        <tr>
-                            <td>WCAG</td>
-                            <td>Web Content Accessibility Guidelines: joukko ohjeita, jotka auttaa tekemään nettisisällöstä kaikille saavutettavaa</td>
-                        </tr>
-                        <tr>
-                            <td>responsiivisuus</td>
-                            <td>Sivun ulkoasun ja sisällön muuttuminen eri kokoisille näytöille. Tästä vastaa CSS</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h2>GIT</h2>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>Sana</td>
-                            <td>Selitys</tdx>
-                        </tr>
-                        <tr>
-                            <td>GIT</td>
-                            <td>versionhallintajärjestelmä ohjelmisto; kun teet koodia, siitä tehdään ensin yksi versio, seuraavaan parannellaan jotain, seuraavaan taas jotain jne. On hyvä, että kaikki versiot ovat tallessa, jos vaikka jotain menee pieleen. GIT säilyttää versiot ja auttaa niiden hallinnassa! Kun moni työskentelee saman koodin kanssa, on kätevää, että kaikki eivät suoraan muuta koodia GIT:iin vaan voivat ensin omassa ympäristössään työskennellä rauhassa, varmistaa, että koodi toimii ja viedä sen sitten versiojärjestelmään muiden saataville</td>
-                        </tr>
-                        <tr>
-                            <td>Komentopaneeli/terminaali</td>
-                            <td>Tekstipohjainen käyttöliittymä tietokoneen kanssa toimimiseen. Voit esim. liikkua hakemistoista/kansioista toiseen, asentaa niihin tavaraa, poistaa niistä tavaraa tai ajaa niissä olevia ohjelmistoja lyhyillä käskyillä</td>
-                        </tr>
-                        <tr>
-                            <td>Repositorio</td>
-                            <td>Tietokansio, johon voi tallentaa kooditiedostoja ja muita projektin tiedostoja. Voi olla esim. GIT:ssä tai paikallisesti omalla koneella. Pitää koneella sekä GIT:ssä myös kirjaa versiotiedoista sisältöjen lisäksi</td>
-                        </tr>
-                        <tr>
-                            <td>Commit</td>
-                            <td>“Sitoumus”; laitat muokkaamasi koodin paikalliseen repositorioosi</td>
-                        </tr>
-                        <tr>
-                            <td>Push/pull</td>
-                            <td>Siirrät paikallisessa ympäristössäsi tekemät muutokset yleiseen repositorioon, joka voi olla vaikka version.aalto.fi:ssä tai git hubissa</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h2>Koodaus</h2>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>deployaaminen</td>
-                            <td>Ohjelma (esim. verkkosivu) siirretään omasta työskentely-ympäristöstä (esim. Vs Code) muiden saataville (esim. ‘insert se miten tehdään kurssilla’)</td>
-                        </tr>
-                        <tr>
-                            <td>kirjasto</td>
-                            <td>kokoelma koodia/yksinkertaistettuja tapoja rakentaa ohjelmia, jotta kaikkea ei aina tarvitse koodata ihan alusta alkaen. Vrt. scalan korkean tason käskyt esim. map() tai forEach()</td>
-                        </tr>
-                        <tr>
-                            <td>framework</td>
-                            <td>Tapa rakentaa ohjelmaa. Määrittelee peruspilarit tekemiselle, kuten erilaisia komponentteja ja rakenteita, sääntöjä ja toimintoja. Esim. React</td>
-                        </tr>
-                        <tr>
-                            <td>syntaksi</td>
-                            <td>Miten kirjoittaa koodia niin, että tietokone ymmärtää sen, eli esim. mihin laitat sulut, pisteet jne. Esim. et voi Scalassa kirjoittaa println“moi” vaan on kirjoitettava println(“moi”)</td>
-                        </tr>
-                        <tr>
-                            <td>responsiivisuus</td>
-                            <td>Katso design</td>
-                        </tr>
-                        <tr>
-                            <td>Flexbox</td>
-                            <td>CSS:n tapa järjestellä verkkosivun sisältöjen paikkoja joustavasti</td>
-                        </tr>
-                        <tr>
-                            <td>Asynkroonisuus</td>
-                            <td>Viittaa siihen, että kaikkea ei suoritetakkaan absoluuttisessa asetetussa järjestyksessä, vaan tietty osa koodia voidaan asettaa asynkroniseksi, jolloin se suoritetaan eri aikataululla ja muu koodin suoritus voi esimerkiksi jatkua, vaikka tämä osio jäisi taustalla suorittumaan</td>
-                        </tr>
-                        <tr>
-                            <td>Node.js</td>
-                            <td>Pyörittää Javascriptiä ikään kuin selain, mutta muualla, jotta Javascriptiä voidaan käyttää myös backend koodaukseen</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h2>Yleinen verkkoliikenne, tietorakenne ja apit</h2>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>serveri</td>
-                            <td>palvelin; vähän niinkun “tietokone” muttei välttämättä fyysinen; looginen rakennelma. Suorittaa siltä pyydettyjä aktiviteettaja esim. laskee, lähettää dataa jne. Rakennelma voi olla esim datakeskuksessa tai cloudissa (jotka toki pohjimmiltaan ovat myös datakeskuksissa)</td>
-                        </tr>
-                        <tr>
-                            <td>Hakemisto</td>
-                            <td>Tietokoneen tapa järjestää tietoa, jotta se pystyy esim. hakemaan niitä tehokkaasti. Voi ajatella esim. kansioina, joiden sisällä on sisältö tai/ja uusia kansioita</td>
-                        </tr>
-                        <tr>
-                            <td>DOM-puu</td>
-                            <td>Tapa, jolla verkkosivun sisältö järjestellään selaimelle ymmärrettäväksi rakenteeksi. Se siis ikään kuin kertoo, miten eri osat liittyvät toisiinsa ja miten käsitellä niitä. Esim. <head></head> osion sisällä voi olla <title></title> osio. Osista puhutaan solmuina ja rakenteesta voikin piirtää puukaavion.</td>
-                        </tr>
-                        <tr>
-                            <td>URL</td>
-                            <td>Uniform Resource Locator: polku internetistä löytyvään hakemistoon. Vähän niinkuin reittiohjeet tiettyyn osoitteeseen jollain palvelimella, josta tietyn verkkosivun tiedot löytyvät</td>
-                        </tr>
-                        <tr>
-                            <td>Localhost</td>
-                            <td>Localhost on lokaali verkko-osoite, jolla pystyt ajamaan omalla koneellasi internettiä vaativaa palvelua esim. lokaalia verkkokehitystä. Näin et joudu hostaamaan palvelua verkossa, kun teet kehitystyötä.</td>
-                        </tr>
-                        <tr>
-                            <td>IP-osoite</td>
-                            <td>tunniste, yksilöllinen “osoite”, jolla laite tunnistetaan internetissä tai paikallisessa verkossa</td>
-                        </tr>
-                        <tr>
-                            <td>http/https</td>
-                            <td>Protokolla, eli määritelty tapa, jolla tietokoneet kommunikoivat keskenään, eli esim. pyytävät toisiltaan tietoja ja lähettävät toisilleen tietoja. Kun avaat verkkosivun, koneesi tekee https-pyynnön jollekin palvelimelle saadakseen sivun html, css yms. muut tiedot</td>
-                        </tr>
-                        <tr>
-                            <td>Api</td>
-                            <td>Ohjelmointirajapinta, joka mahdollistaa kahden ohjelman tai ohjelmiston osan välisen kommunikoinnin, eli toinen ohjelma voi esim. jakaa toiselle tietoja</td>
-                        </tr>
-                        <tr id="telemetria">
-                            <td>Telemetria</td>
-                            <td>Tiedon mittaamista ja keräämistä etäältä. Mittaustulokset lähetetään automaattisesti toiseen paikkaan analysointia ja seurantaa varten. Sovellukset keräävät käyttötilastoja ja virheilmoituksia kehittäjille.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="VJP-sanakirja avaa CS-C1180-kurssilla käytettävää slangia selkokieleksi." />
+    <link rel="stylesheet" href="/vjp-sanakirja/sanakirja.css" />
+    <title>😈VJP Sanakirja😈</title>
+  </head>
+  <body>
+    <div class="layout">
+      <aside>
+        <div class="brand">
+          <a class="back" href="/">← vjp.wtf</a>
+          <h1>VJP-sanakirja</h1>
         </div>
-    </body>
+        <input class="search" id="search" type="search" placeholder="Hae sanaa tai selitystä" aria-label="Hae" aria-controls="content" autocomplete="off" hidden />
+        <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-box" hidden>Sisältö ja hakemisto</button>
+        <div class="nav-box" id="nav-box">
+          <div class="tabs" role="tablist" hidden>
+            <button class="tab" role="tab" id="tab-sisalto" aria-controls="nav-sisalto" aria-selected="true" data-label="Sisältö">Sisältö</button>
+            <button class="tab" role="tab" id="tab-hakemisto" aria-controls="nav-hakemisto" aria-selected="false" data-label="Hakemisto">Hakemisto</button>
+          </div>
+          <nav class="nav nav-sisalto" id="nav-sisalto" role="tabpanel" aria-labelledby="tab-sisalto">
+            <h2>Design</h2>
+            <ul>
+              <li><a href="#wireframe" data-id="wireframe">wireframe</a></li>
+              <li><a href="#ux" data-id="ux">UX</a></li>
+              <li><a href="#ui" data-id="ui">UI</a></li>
+              <li><a href="#wcag" data-id="wcag">WCAG</a></li>
+              <li><a href="#responsiivisuus" data-id="responsiivisuus">responsiivisuus</a></li>
+            </ul>
+            <h2>GIT</h2>
+            <ul>
+              <li><a href="#git" data-id="git">GIT</a></li>
+              <li><a href="#komentopaneeli-terminaali" data-id="komentopaneeli-terminaali">Komentopaneeli/terminaali</a></li>
+              <li><a href="#repositorio" data-id="repositorio">Repositorio</a></li>
+              <li><a href="#commit" data-id="commit">Commit</a></li>
+              <li><a href="#push-pull" data-id="push-pull">Push/pull</a></li>
+            </ul>
+            <h2>Koodaus</h2>
+            <ul>
+              <li><a href="#deployaaminen" data-id="deployaaminen">deployaaminen</a></li>
+              <li><a href="#kirjasto" data-id="kirjasto">kirjasto</a></li>
+              <li><a href="#framework" data-id="framework">framework</a></li>
+              <li><a href="#syntaksi" data-id="syntaksi">syntaksi</a></li>
+              <li><a href="#flexbox" data-id="flexbox">Flexbox</a></li>
+              <li><a href="#asynkroonisuus" data-id="asynkroonisuus">Asynkroonisuus</a></li>
+              <li><a href="#node-js" data-id="node-js">Node.js</a></li>
+            </ul>
+            <h2>Verkko &amp; apit</h2>
+            <ul>
+              <li><a href="#serveri" data-id="serveri">serveri</a></li>
+              <li><a href="#hakemisto" data-id="hakemisto">Hakemisto</a></li>
+              <li><a href="#dom-puu" data-id="dom-puu">DOM-puu</a></li>
+              <li><a href="#url" data-id="url">URL</a></li>
+              <li><a href="#localhost" data-id="localhost">Localhost</a></li>
+              <li><a href="#ip-osoite" data-id="ip-osoite">IP-osoite</a></li>
+              <li><a href="#http-https" data-id="http-https">http/https</a></li>
+              <li><a href="#api" data-id="api">Api</a></li>
+              <li><a href="#telemetria" data-id="telemetria">Telemetria</a></li>
+            </ul>
+          </nav>
+          <nav class="nav nav-hakemisto" id="nav-hakemisto" role="tabpanel" aria-labelledby="tab-hakemisto" hidden>
+            <h2>A</h2>
+            <ul>
+              <li><a href="#api" data-id="api">Api</a></li>
+              <li><a href="#asynkroonisuus" data-id="asynkroonisuus">Asynkroonisuus</a></li>
+            </ul>
+            <h2>C</h2>
+            <ul>
+              <li><a href="#commit" data-id="commit">Commit</a></li>
+            </ul>
+            <h2>D</h2>
+            <ul>
+              <li><a href="#deployaaminen" data-id="deployaaminen">deployaaminen</a></li>
+              <li><a href="#dom-puu" data-id="dom-puu">DOM-puu</a></li>
+            </ul>
+            <h2>F</h2>
+            <ul>
+              <li><a href="#flexbox" data-id="flexbox">Flexbox</a></li>
+              <li><a href="#framework" data-id="framework">framework</a></li>
+            </ul>
+            <h2>G</h2>
+            <ul>
+              <li><a href="#git" data-id="git">GIT</a></li>
+            </ul>
+            <h2>H</h2>
+            <ul>
+              <li><a href="#hakemisto" data-id="hakemisto">Hakemisto</a></li>
+              <li><a href="#http-https" data-id="http-https">http/https</a></li>
+            </ul>
+            <h2>I</h2>
+            <ul>
+              <li><a href="#ip-osoite" data-id="ip-osoite">IP-osoite</a></li>
+            </ul>
+            <h2>K</h2>
+            <ul>
+              <li><a href="#kirjasto" data-id="kirjasto">kirjasto</a></li>
+              <li><a href="#komentopaneeli-terminaali" data-id="komentopaneeli-terminaali">Komentopaneeli/terminaali</a></li>
+            </ul>
+            <h2>L</h2>
+            <ul>
+              <li><a href="#localhost" data-id="localhost">Localhost</a></li>
+            </ul>
+            <h2>N</h2>
+            <ul>
+              <li><a href="#node-js" data-id="node-js">Node.js</a></li>
+            </ul>
+            <h2>P</h2>
+            <ul>
+              <li><a href="#push-pull" data-id="push-pull">Push/pull</a></li>
+            </ul>
+            <h2>R</h2>
+            <ul>
+              <li><a href="#repositorio" data-id="repositorio">Repositorio</a></li>
+              <li><a href="#responsiivisuus" data-id="responsiivisuus">responsiivisuus</a></li>
+            </ul>
+            <h2>S</h2>
+            <ul>
+              <li><a href="#serveri" data-id="serveri">serveri</a></li>
+              <li><a href="#syntaksi" data-id="syntaksi">syntaksi</a></li>
+            </ul>
+            <h2>T</h2>
+            <ul>
+              <li><a href="#telemetria" data-id="telemetria">Telemetria</a></li>
+            </ul>
+            <h2>U</h2>
+            <ul>
+              <li><a href="#ui" data-id="ui">UI</a></li>
+              <li><a href="#url" data-id="url">URL</a></li>
+              <li><a href="#ux" data-id="ux">UX</a></li>
+            </ul>
+            <h2>W</h2>
+            <ul>
+              <li><a href="#wcag" data-id="wcag">WCAG</a></li>
+              <li><a href="#wireframe" data-id="wireframe">wireframe</a></li>
+            </ul>
+          </nav>
+          <p class="empty" id="nav-empty" hidden>Ei osumia.</p>
+        </div>
+      </aside>
+
+      <main>
+        <p class="intro">Tämä sanakirja avaa kurssilla käytettävää slangia selkokieleksi.</p>
+        <p class="count" id="count" aria-live="polite">26 sanaa, 4 aihetta</p>
+        <div id="content">
+        <section aria-labelledby="design">
+          <h2 id="design">Design</h2>
+          <dl>
+              <div class="entry" id="wireframe">
+                <dt>wireframe</dt>
+                <dd>
+                    <p class="def">rautalanka/luonnos/suunnitelma. Miltä ohjelma tai design tulee pääpiirteittään näyttämään ilman visuaalisia yksityiskohtia. Esim. Mitä erilaisia komponentteja on ja mihin ne asetetaan?</p>
+                </dd>
+              </div>
+              <div class="entry" id="ux">
+                <dt>UX</dt>
+                <dd>
+                    <p class="def">User eXperience; käyttäjäkokemus. Käyttäjän kokonaisvaltaiset mietteet, ajatukset ja tunteet tuotteesta tuotteen käyttämisen aikana ja sen jälkeen</p>
+                </dd>
+              </div>
+              <div class="entry" id="ui">
+                <dt>UI</dt>
+                <dd>
+                    <p class="def">User Interface; käyttöliittymä. Rakennettu kommunikointiväline ihmisen ja koneen välillä (VJP-kontekstissa ainakin, onhan toki esim. automaattiolypsykoneiden suunnittelussa mietitty käyttöliittymää, jotta lehmät ois mahis tyytyväisiä :D) Voi olla graafinen (esim. Figma (eli suunnittelet käyttöliittymällä käyttöliittymiä :D)) tai tekstipohjainen (esim. komentopaneeli)</p>
+                    <p class="see">Katso myös: <a href="#komentopaneeli-terminaali">Komentopaneeli/terminaali</a></p>
+                </dd>
+              </div>
+              <div class="entry" id="wcag">
+                <dt>WCAG</dt>
+                <dd>
+                    <p class="def">Web Content Accessibility Guidelines: joukko ohjeita, jotka auttaa tekemään nettisisällöstä kaikille saavutettavaa</p>
+                </dd>
+              </div>
+              <div class="entry" id="responsiivisuus">
+                <dt>responsiivisuus</dt>
+                <dd>
+                    <p class="def">Sivun ulkoasun ja sisällön muuttuminen eri kokoisille näytöille. Tästä vastaa CSS</p>
+                </dd>
+              </div>
+          </dl>
+        </section>
+
+        <section aria-labelledby="git">
+          <h2 id="git">GIT</h2>
+          <dl>
+              <div class="entry" id="git">
+                <dt>GIT</dt>
+                <dd>
+                    <p class="def">versionhallintajärjestelmä ohjelmisto; kun teet koodia, siitä tehdään ensin yksi versio, seuraavaan parannellaan jotain, seuraavaan taas jotain jne. On hyvä, että kaikki versiot ovat tallessa, jos vaikka jotain menee pieleen. GIT säilyttää versiot ja auttaa niiden hallinnassa! Kun moni työskentelee saman koodin kanssa, on kätevää, että kaikki eivät suoraan muuta koodia GIT:iin vaan voivat ensin omassa ympäristössään työskennellä rauhassa, varmistaa, että koodi toimii ja viedä sen sitten versiojärjestelmään muiden saataville</p>
+                    <p class="see">Katso myös: <a href="#repositorio">Repositorio</a>, <a href="#push-pull">Push/pull</a></p>
+                </dd>
+              </div>
+              <div class="entry" id="komentopaneeli-terminaali">
+                <dt>Komentopaneeli/terminaali</dt>
+                <dd>
+                    <p class="def">Tekstipohjainen käyttöliittymä tietokoneen kanssa toimimiseen. Voit esim. liikkua hakemistoista/kansioista toiseen, asentaa niihin tavaraa, poistaa niistä tavaraa tai ajaa niissä olevia ohjelmistoja lyhyillä käskyillä</p>
+                    <p class="see">Katso myös: <a href="#ui">UI</a>, <a href="#hakemisto">Hakemisto</a></p>
+                </dd>
+              </div>
+              <div class="entry" id="repositorio">
+                <dt>Repositorio</dt>
+                <dd>
+                    <p class="def">Tietokansio, johon voi tallentaa kooditiedostoja ja muita projektin tiedostoja. Voi olla esim. GIT:ssä tai paikallisesti omalla koneella. Pitää koneella sekä GIT:ssä myös kirjaa versiotiedoista sisältöjen lisäksi</p>
+                    <p class="see">Katso myös: <a href="#git">GIT</a>, <a href="#commit">Commit</a>, <a href="#push-pull">Push/pull</a></p>
+                </dd>
+              </div>
+              <div class="entry" id="commit">
+                <dt>Commit</dt>
+                <dd>
+                    <p class="def">“Sitoumus”; laitat muokkaamasi koodin paikalliseen repositorioosi</p>
+                    <p class="see">Katso myös: <a href="#repositorio">Repositorio</a></p>
+                </dd>
+              </div>
+              <div class="entry" id="push-pull">
+                <dt>Push/pull</dt>
+                <dd>
+                    <p class="def">Siirrät paikallisessa ympäristössäsi tekemät muutokset yleiseen repositorioon, joka voi olla vaikka version.aalto.fi:ssä tai git hubissa</p>
+                    <p class="see">Katso myös: <a href="#git">GIT</a>, <a href="#repositorio">Repositorio</a></p>
+                </dd>
+              </div>
+          </dl>
+        </section>
+
+        <section aria-labelledby="koodaus">
+          <h2 id="koodaus">Koodaus</h2>
+          <dl>
+              <div class="entry" id="deployaaminen">
+                <dt>deployaaminen</dt>
+                <dd>
+                    <p class="def">Ohjelma (esim. verkkosivu) siirretään omasta työskentely-ympäristöstä (esim. Vs Code) muiden saataville (esim. ‘insert se miten tehdään kurssilla’)</p>
+                </dd>
+              </div>
+              <div class="entry" id="kirjasto">
+                <dt>kirjasto</dt>
+                <dd>
+                    <p class="def">kokoelma koodia/yksinkertaistettuja tapoja rakentaa ohjelmia, jotta kaikkea ei aina tarvitse koodata ihan alusta alkaen. Vrt. scalan korkean tason käskyt esim. map() tai forEach()</p>
+                </dd>
+              </div>
+              <div class="entry" id="framework">
+                <dt>framework</dt>
+                <dd>
+                    <p class="def">Tapa rakentaa ohjelmaa. Määrittelee peruspilarit tekemiselle, kuten erilaisia komponentteja ja rakenteita, sääntöjä ja toimintoja. Esim. React</p>
+                </dd>
+              </div>
+              <div class="entry" id="syntaksi">
+                <dt>syntaksi</dt>
+                <dd>
+                    <p class="def">Miten kirjoittaa koodia niin, että tietokone ymmärtää sen, eli esim. mihin laitat sulut, pisteet jne. Esim. et voi Scalassa kirjoittaa println“moi” vaan on kirjoitettava println(“moi”)</p>
+                </dd>
+              </div>
+              <div class="entry" id="flexbox">
+                <dt>Flexbox</dt>
+                <dd>
+                    <p class="def">CSS:n tapa järjestellä verkkosivun sisältöjen paikkoja joustavasti</p>
+                </dd>
+              </div>
+              <div class="entry" id="asynkroonisuus">
+                <dt>Asynkroonisuus</dt>
+                <dd>
+                    <p class="def">Viittaa siihen, että kaikkea ei suoritetakkaan absoluuttisessa asetetussa järjestyksessä, vaan tietty osa koodia voidaan asettaa asynkroniseksi, jolloin se suoritetaan eri aikataululla ja muu koodin suoritus voi esimerkiksi jatkua, vaikka tämä osio jäisi taustalla suorittumaan</p>
+                </dd>
+              </div>
+              <div class="entry" id="node-js">
+                <dt>Node.js</dt>
+                <dd>
+                    <p class="def">Pyörittää Javascriptiä ikään kuin selain, mutta muualla, jotta Javascriptiä voidaan käyttää myös backend koodaukseen</p>
+                </dd>
+              </div>
+              <div class="entry xref">
+                <dt>responsiivisuus</dt>
+                <dd>Katso <a href="#responsiivisuus">responsiivisuus</a> (Design).</dd>
+              </div>
+          </dl>
+        </section>
+
+        <section aria-labelledby="yleinen-verkkoliikenne-tietorakenne-ja-apit">
+          <h2 id="yleinen-verkkoliikenne-tietorakenne-ja-apit">Yleinen verkkoliikenne, tietorakenne ja apit</h2>
+          <dl>
+              <div class="entry" id="serveri">
+                <dt>serveri</dt>
+                <dd>
+                    <p class="def">palvelin; vähän niinkun “tietokone” muttei välttämättä fyysinen; looginen rakennelma. Suorittaa siltä pyydettyjä aktiviteettaja esim. laskee, lähettää dataa jne. Rakennelma voi olla esim datakeskuksessa tai cloudissa (jotka toki pohjimmiltaan ovat myös datakeskuksissa)</p>
+                </dd>
+              </div>
+              <div class="entry" id="hakemisto">
+                <dt>Hakemisto</dt>
+                <dd>
+                    <p class="def">Tietokoneen tapa järjestää tietoa, jotta se pystyy esim. hakemaan niitä tehokkaasti. Voi ajatella esim. kansioina, joiden sisällä on sisältö tai/ja uusia kansioita</p>
+                    <p class="see">Katso myös: <a href="#komentopaneeli-terminaali">Komentopaneeli/terminaali</a>, <a href="#url">URL</a></p>
+                </dd>
+              </div>
+              <div class="entry" id="dom-puu">
+                <dt>DOM-puu</dt>
+                <dd>
+                    <p class="def">Tapa, jolla verkkosivun sisältö järjestellään selaimelle ymmärrettäväksi rakenteeksi. Se siis ikään kuin kertoo, miten eri osat liittyvät toisiinsa ja miten käsitellä niitä. Esim. &lt;head&gt; osion sisällä voi olla &lt;title&gt; osio. Osista puhutaan solmuina ja rakenteesta voikin piirtää puukaavion.</p>
+                </dd>
+              </div>
+              <div class="entry" id="url">
+                <dt>URL</dt>
+                <dd>
+                    <p class="def">Uniform Resource Locator: polku internetistä löytyvään hakemistoon. Vähän niinkuin reittiohjeet tiettyyn osoitteeseen jollain palvelimella, josta tietyn verkkosivun tiedot löytyvät</p>
+                    <p class="see">Katso myös: <a href="#hakemisto">Hakemisto</a></p>
+                </dd>
+              </div>
+              <div class="entry" id="localhost">
+                <dt>Localhost</dt>
+                <dd>
+                    <p class="def">Localhost on lokaali verkko-osoite, jolla pystyt ajamaan omalla koneellasi internettiä vaativaa palvelua esim. lokaalia verkkokehitystä. Näin et joudu hostaamaan palvelua verkossa, kun teet kehitystyötä.</p>
+                </dd>
+              </div>
+              <div class="entry" id="ip-osoite">
+                <dt>IP-osoite</dt>
+                <dd>
+                    <p class="def">tunniste, yksilöllinen “osoite”, jolla laite tunnistetaan internetissä tai paikallisessa verkossa</p>
+                </dd>
+              </div>
+              <div class="entry" id="http-https">
+                <dt>http/https</dt>
+                <dd>
+                    <p class="def">Protokolla, eli määritelty tapa, jolla tietokoneet kommunikoivat keskenään, eli esim. pyytävät toisiltaan tietoja ja lähettävät toisilleen tietoja. Kun avaat verkkosivun, koneesi tekee https-pyynnön jollekin palvelimelle saadakseen sivun html, css yms. muut tiedot</p>
+                </dd>
+              </div>
+              <div class="entry" id="api">
+                <dt>Api</dt>
+                <dd>
+                    <p class="def">Ohjelmointirajapinta, joka mahdollistaa kahden ohjelman tai ohjelmiston osan välisen kommunikoinnin, eli toinen ohjelma voi esim. jakaa toiselle tietoja</p>
+                </dd>
+              </div>
+              <div class="entry" id="telemetria">
+                <dt>Telemetria</dt>
+                <dd>
+                    <p class="def">Tiedon mittaamista ja keräämistä etäältä. Mittaustulokset lähetetään automaattisesti toiseen paikkaan analysointia ja seurantaa varten. Sovellukset keräävät käyttötilastoja ja virheilmoituksia kehittäjille.</p>
+                </dd>
+              </div>
+          </dl>
+        </section>
+        </div>
+        <p class="empty" id="empty" hidden>Ei osumia haulle ”<span id="empty-query"></span>”.</p>
+      </main>
+    </div>
+
+    <script src="/vjp-sanakirja/sanakirja.js"></script>
+  </body>
 </html>
